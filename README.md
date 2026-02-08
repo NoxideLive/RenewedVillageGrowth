@@ -7,6 +7,12 @@ RVG is a Game Script for OpenTTD that manages towns growth in a new and balanced
 Forum topic: https://www.tt-forums.net/viewtopic.php?f=65&t=87052<br/>
 BaNaNaS: https://bananas.openttd.org/package/game-script/52455649
 
+## Town growth basics
+
+- Towns are monitored once they exchange passengers.
+- Deliver required cargo to the town or a nearby industry (a station named after the town counts).
+- Transport a minimum percentage of passengers/mail produced by the town.
+
 ## Requirements
 
 - OpenTTD, v. 14.x or newer.

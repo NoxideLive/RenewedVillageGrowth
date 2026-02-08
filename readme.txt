@@ -317,12 +317,14 @@ Contributors:
 6. FAQ
 
 Q: Where do I have to deliver the required cargo?
-A: Some of the cargo types are accepted by the towns, so they can be
-   directly delivered there. Other cargo types need to be delivered
-   to a industry which accepts it. The station accepting the cargo
-   needs to be near the town. The best indicator is that if the name
-   of the station is same as the town, the cargo will be counted
-   towards that town.
+A: Town growth checks cargo delivered *to* the town (or to industries near it)
+   and also requires that some passengers/mail produced *by* the town are
+   transported away. Some of the cargo types are accepted by the towns, so
+   they can be directly delivered there. Other cargo types need to be
+   delivered to a industry which accepts it. The station accepting the
+   cargo needs to be near the town. The best indicator is that if the name
+   of the station is same as the town, the cargo will be counted towards
+   that town.
 
 Q: What to do when no industry accepts that cargo near the town?
 A: If no industry accepts the cargo, the industry has to be funded
