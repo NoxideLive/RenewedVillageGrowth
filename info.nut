@@ -67,6 +67,31 @@ class MainClass extends GSInfo
                     _2 = "Good",
                     _3 = "Poor" });
 
+        AddSetting({ name = "force_economy",
+                description = "Economy (0 = auto detect)",
+                easy_value = 0,
+                medium_value = 0,
+                hard_value = 0,
+                custom_value = 0,
+                flags = CONFIG_INGAME, min_value = 0, max_value = 46 });
+        AddLabels("force_economy", {
+                _0 = "Auto Detect",
+                _1 = "Generated",
+                _2 = "Base Temperate", _3 = "Base Arctic", _4 = "Base Tropical", _5 = "Base Toyland",
+                _6 = "FIRS 1 FIRS", _7 = "FIRS 1 Temperate", _8 = "FIRS 1 Arctic", _9 = "FIRS 1 Tropic", _10 = "FIRS 1 Hearth of Darkness",
+                _11 = "ECS",
+                _12 = "FIRS 2 Temperate", _13 = "FIRS 2 Arctic", _14 = "FIRS 2 Tropic", _15 = "FIRS 2 In a Hot Country", _16 = "FIRS 2 Extreme",
+                _17 = "YETI",
+                _18 = "FIRS 3 Temperate", _19 = "FIRS 3 Arctic", _20 = "FIRS 3 Tropic", _21 = "FIRS 3 Steeltown", _22 = "FIRS 3 In a Hot Country", _23 = "FIRS 3 Extreme",
+                _24 = "NAIS North America", _25 = "Improved Town Industries",
+                _26 = "FIRS 4 Temperate", _27 = "FIRS 4 Arctic", _28 = "FIRS 4 Tropic", _29 = "FIRS 4 Steeltown", _30 = "FIRS 4 In a Hot Country",
+                _31 = "FIRS 5 Temperate", _32 = "FIRS 5 Arctic", _33 = "FIRS 5 Tropic", _34 = "FIRS 5 Steeltown", _35 = "FIRS 5 In a Hot Country",
+                _36 = "XIS The Lot", _37 = "AXIS Steel City", _38 = "AXIS Tropical Paradise",
+                _39 = "OTIS", _40 = "Industries of the Caribbean", _41 = "Lumberjack Industries",
+                _42 = "Wannaroo Basic Industries", _43 = "Improved Town Industries", _44 = "Real Industries",
+                _45 = "Minimalist Industries", _46 = "Pikka's Industries Redux Set (PIRS 2022)"
+        });
+
         AddSetting({
                 name = "cargo_6_category",
                 description = "Cargo: Use 6 cargo categories for supported economies",

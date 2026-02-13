@@ -157,6 +157,7 @@ function MainClass::Init()
                                              GSController.GetSetting("category_4_min_pop"),
                                              GSController.GetSetting("category_5_min_pop"),
                                              GSController.GetSetting("category_6_min_pop")];
+        ::SettingsTable.force_economy <- GSController.GetSetting("force_economy");
         ::SettingsTable.always_cat1 <- GSController.GetSetting("always_cat1");
         ::SettingsTable.always_limiter <- GSController.GetSetting("always_limiter");
     }
@@ -168,14 +169,13 @@ function MainClass::Init()
 
     if (::SettingsTable.randomization == Randomization.INDUSTRY_DESC
      || ::SettingsTable.randomization == Randomization.INDUSTRY_ASC) {
-        if (!InitIndustryLists())
-            return InitError.INDUSTRY_LIST;
+        local result = InitIndustryLists();
+        if (result != InitError.NONE) return result;
     }
     else {
         // Initialize cargo lists and variables
-        local cargo_result = InitCargoLists();
-        if (cargo_result != InitError.NONE)
-            return cargo_result;
+        local result = InitCargoLists();
+        if (result != InitError.NONE) return result;
     }
 
     /* Check whether saved data are in the current save

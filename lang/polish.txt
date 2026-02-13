@@ -23,6 +23,8 @@ STR_CARGOCAT_LABEL_12    :Kategoria V
 
 ##### STORY BOOK #####
 STR_SB_TITLE_1           :Kategorie towarów
+STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Wygenerowana gospodarka{BLACK}: Żadna wstępnie zdefiniowana gospodarka (FIRS, ECS, Base Set itd.) nie pasuje do listy towarów. Kategorie towarów zostały utworzone proceduralnie i mogą być suboptymalne. Dla lepszych wyników załaduj obsługiwany NewGRF przemysłu (np. FIRS 5, ECS) lub ustaw {ORANGE}Gospodarkę{BLACK} w ustawieniach skryptu.
+STR_SB_WELCOME_ECONOMY_FORCED_GENERATED :{ORANGE}Gospodarka: Wygenerowana{BLACK}. Kategorie towarów zostały utworzone proceduralnie i mogą być suboptymalne.
 STR_SB_EXPLAIN_1         :Aby miasto mogło się rozwijać, wymagane jest dostarczanie do niego towarów z danych kategorii. Każda kategoria zawiera różne typy towarów. Aby zaspokoić wymagania konkretnej kategorii, należy dostarczyć dowolny należący do niej typ towaru, do stacji należącej do miasta (tzn. której domyślna nazwa zawiera nazwę miasta).
 STR_SB_EXPLAIN_2         :Aby miasto mogło się rozwijać, wymagane jest dostarczanie do niego towarów z danych kategorii. Każda kategoria zawiera różne typy towarów. Każde miasto ma wybór {STRING} z każdej kategorii. Aby zaspokoić wymagania konkretnej kategorii, należy dostarczyć dowolny należący do niej typ towaru akceptowany przez dane miasto, do stacji należącej do miasta (tzn. której domyślna nazwa zawiera nazwę miasta). Lista wymaganych towarów dostępna jest w oknie informacji o mieście.
 STR_SB_EXPLAIN_RANDOM_0  :{SILVER}{NUM} {P "typu towarów" "typów towarów"}{BLACK}{STRING}
@@ -33,6 +35,7 @@ STR_SB_CARGOCAT_DECAY    :Miesięczny spadek
 STR_SB_CARGOCAT_CARGOT   :Typy towarów
 STR_SB_WARNING_TITLE     :UWAGA
 STR_SB_WARNING_1         :Liczba miast na mapie jest zbyt duża, skrypt nie będzie mógł zapisywać zmian. Obecna liczba miast to {SILVER}{NUM}{BLACK}, a maksymalna dozwolona liczba to {SILVER}{NUM}{BLACK}. {RED}Skrypt zostaje wyłączony.{BLACK}
+STR_SB_WARNING_5         :Wykrywanie gospodarki nie powiodło się. Wybrana gospodarka nie pasuje do listy towarów w grze. Upewnij się, że załadowano właściwy zestaw przemysłu. {RED}Skrypt gry jest wyłączony.{BLACK}
 STR_SB_WARNING_6         :Wymagane Pasażerowie/Poczta przez ustawienia, ale nieobecne w grze. Załaduj NewGRF który je dostarcza lub wyłącz to ustawienie. {RED}Skrypt zostaje wyłączony.{BLACK}
 
 ##### GOAL #####
@@ -56,3 +59,7 @@ STR_TOWNBOX_CARGO_STOP          :Zbyt mało towaru wywiezionego z miasta:{} * {R
 STR_TOWNBOX_CARGO_LOW           :Zbyt mało towaru wywiezionego z miasta:{} * {SILVER}{CARGO_LIST}{BLACK}{}Kategorie towarów:
 STR_TOWNBOX_CARGO_DELAYED       :Zbyt mało towaru wywiezionego z miasta:{} * {GOLD}{CARGO_LIST}{BLACK}{}Kategorie towarów:
 STR_TOWNBOX_NOGROWTH            :Wywieź następujące towary z miasta, aby mogło rosnąć: {SILVER}{CARGO_LIST}{BLACK}.
+
+##### FORCE ECONOMY #####
+STR_FORCE_ECONOMY_AUTO          :Wykrywanie automatyczne
+STR_FORCE_ECONOMY_VERSION_NONE  :—

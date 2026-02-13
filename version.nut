@@ -4,6 +4,7 @@ enum InitError {
     INDUSTRY_LIST,
     TOWN_NUMBER,
     TOWN_GROWTH_RATE,
+    ECONOMY_MISMATCH,
     PAX_MAIL_REQUIRED,
 }
 
