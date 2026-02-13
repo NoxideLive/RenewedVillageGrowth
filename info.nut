@@ -274,6 +274,48 @@ class MainClass extends GSInfo
                 custom_value = 1,
                 flags = CONFIG_INGAME, min_value = 1, max_value = 3 });
         AddLabels("log_level", { _1 = "1: Info", _2 = "2: Cargo", _3 = "3: Debug" });
+
+        AddSetting({ name = "force_economy",
+                description = "Force economy (0 = auto detect)",
+                easy_value = 0,
+                medium_value = 0,
+                hard_value = 0,
+                custom_value = 0,
+                flags = CONFIG_INGAME, min_value = 0, max_value = 20 });
+        AddLabels("force_economy", {
+                _0 = "Auto detect",
+                _1 = "Base Set",
+                _2 = "FIRS 5",
+                _3 = "FIRS 4",
+                _4 = "FIRS 3",
+                _5 = "FIRS 2",
+                _6 = "FIRS 1",
+                _7 = "ECS",
+                _8 = "PIRS",
+                _9 = "YETI",
+                _10 = "XIS",
+                _11 = "AXIS",
+                _12 = "OTIS",
+                _13 = "IOTC",
+                _14 = "NAIS",
+                _15 = "ITI",
+                _16 = "ITI2",
+                _17 = "LUMBERJACK",
+                _18 = "WRBI",
+                _19 = "REAL",
+                _20 = "MINIMALIST" });
+
+        AddSetting({ name = "force_economy_version",
+                description = "Force economy variant (0 = not used when auto)",
+                easy_value = 0,
+                medium_value = 0,
+                hard_value = 0,
+                custom_value = 0,
+                flags = CONFIG_INGAME, min_value = 0, max_value = 45 });
+        local version_labels = { _0 = GSText.STR_FORCE_ECONOMY_VERSION_NONE };
+        for (local i = 1; i <= 45; i++)
+            version_labels["_" + i] <- GSText.STR_ECONOMY_NONE + i;
+        AddLabels("force_economy_version", version_labels);
     }
 }
 

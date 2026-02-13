@@ -1,3 +1,12 @@
+enum InitError {
+    NONE,
+    CARGO_LIST,
+    INDUSTRY_LIST,
+    TOWN_NUMBER,
+    TOWN_GROWTH_RATE,
+    ECONOMY_MISMATCH,
+}
+
 SELF_VERSION <- 121             // integer version of the GS, needs to be increased with each release
 SELF_MINLOADVERSION <- 120      // minimum integer version of GS that can load this version, increased when major version is increased
 SELF_MAJORVERSION <- 12         // main version of the GS, releases with same major version should be saveload compatible

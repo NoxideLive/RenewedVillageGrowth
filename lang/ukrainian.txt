@@ -46,6 +46,8 @@ STR_SB_WARNING_1         :На карті більше міст, ніж може
 STR_SB_WARNING_2         :Не вдалося ініціалізувати список вантажів. Це сталося через невідомий промисловий newGRF, для якого неможливо створити процедурний список вантажів. {RED}Ігровий скрипт вимкнено.{BLACK}
 STR_SB_WARNING_3         :Не вдалося ініціалізувати список вантажів. Це сталося через опцію рандомізації промисловості, для якої неможливо створити процедурні промислові категорії. {RED}Ігровий скрипт вимкнено.{BLACK}
 STR_SB_WARNING_4         :Ви повинні встановити параметр {ORANGE}Середовище->Міста->Швидкість зростання міст{BLACK} на щось інше, ніж Жодна. {RED}Ігровий скрипт вимкнено.{BLACK}
+STR_SB_WARNING_5         :Визначення економіки не вдалося. Примусова економіка не відповідає списку вантажів у грі. Переконайтеся, що завантажено правильний набір галузей. {RED}Ігровий скрипт вимкнено.{BLACK}
+STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Згенерована економіка{BLACK}: жодна зі встановлених економік (FIRS, ECS, Base Set тощо) не відповідає вашому списку вантажів. Категорії вантажів були створені процедурно і можуть бути субоптимальними. Для кращих результатів завантажте підтримуваний галузевий NewGRF (наприклад, FIRS 5, ECS) або встановіть {ORANGE}Примусову економіку{BLACK} в налаштуваннях ігрового скрипта, щоб вимагати конкретну економіку.
 STR_SB_WELCOME_TITLE     :Renewed Village Growth {NUM}.{NUM}
 STR_SB_WELCOME_DESC      :{SILVER}Renewed Village Growth (RVG){BLACK} - це ігровий скрипт, який {ORANGE}змінює спосіб зростання міст{BLACK} в OpenTTD. Для кожного міста визначено різні вимоги до вантажів, які потрібно - частково або повністю - щомісячно задовольняти, щоб міста росли швидше. Більше інформації можна знайти в {ORANGE}файлі Readme{BLACK}.
 STR_SB_WELCOME_CARGO     :Економіка {SILVER}{STRING}{BLACK} складається з {SILVER}{NUM} категорій{BLACK}. Щоб виконати категорію, доставте один або кілька специфічних для категорії вантажів на {ORANGE}станцію поблизу міста, яка приймає цей тип вантажу{BLACK}. Виконайте вимоги вище {SILVER}{NUM}%{BLACK}, щоб {ORANGE}міста росли швидше{BLACK}. Більше інформації про категорії вантажів показано на сторінці {ORANGE}Категорії вантажів{BLACK} книги історій.
@@ -105,6 +107,10 @@ STR_TOWNBOX_COMBINED_3          :{STRING}{}{STRING}{} * {LTBLUE}{CARGO_LIST}{BLA
 STR_TOWNBOX_COMBINED_4          :{STRING}{}{STRING}{} * {LTBLUE}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {GREEN}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {RED}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {BROWN}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {PURPLE}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}
 STR_TOWNBOX_COMBINED_5          :{STRING}{}{STRING}{} * {LTBLUE}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {GREEN}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {RED}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {BROWN}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {PURPLE}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {YELLOW}{CARGO_LIST}{BLACK} : {SILVER}{RAW_STRING}{BLACK}
 
+##### FORCE ECONOMY #####
+STR_FORCE_ECONOMY_AUTO          :Автовизначення
+STR_FORCE_ECONOMY_VERSION_NONE  :—
+
 ##### ECONOMIES #####
 STR_ECONOMY_NONE                :
 STR_ECONOMY_BASESET_TEMPERATE   :Базова помірна
@@ -147,7 +153,7 @@ STR_ECONOMY_AXIS_TROPICAL       :AXIS Тропічний рай
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Індустрії Карибських островів
 STR_ECONOMY_LUMBERJACK          :Лісорубні індустрії
-STR_ECOMONY_WRBI                :Ваннару базові індустрії
+STR_ECONOMY_WRBI                :Ваннару базові індустрії
 STR_ECONOMY_ITI2                :Покращені міські індустрії 2
 STR_ECONOMY_REAL                :Реальні індустрії
 STR_ECONOMY_MINIMALIST          :Мінімалістичні індустрії

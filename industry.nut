@@ -5,7 +5,14 @@ function InitIndustryLists()
 {
     // Get current cargo list and init economy var
 	InitCurrentCargoList();
-    ::Economy <- DiscoverEconomyType();
+    local forced = GetForcedEconomyEnum();
+    local economy = (forced != null) ? DiscoverEconomyType(forced) : DiscoverEconomyType();
+    if (forced != null && economy == Economies.NONE) {
+        GSLog.Error("Economy mismatch: Forced economy does not match cargo list. See story book. Ensure the correct industry NewGRF is loaded.");
+        Log.Warning("Forced economy " + forced + " does not match. Expected vs actual cargo lists differ.");
+        return InitError.ECONOMY_MISMATCH;
+    }
+    ::Economy <- economy;
     ::CargoLimiter <- ::CargoSettings[::Economy].limiter;
 
     local industry_type_list = GSIndustryTypeList();
@@ -55,7 +62,7 @@ function InitIndustryLists()
 
     // Require at least one 1-cargo industry and at least two out of three [2-cargo, 3-cargo, 4+cargo] with 3 and more industry types
     if ((::industries_raw.len() + ::industries_1.len() == 0) || ((::industries_2.len() < 3).tointeger() + (::industries_3.len() < 3).tointeger() + (::industries_4.len() < 3).tointeger() > 1))
-        return false;
+        return InitError.INDUSTRY_LIST;
 
     ::CargoCatNum <- (list_4.len() > 0 || (list_3.len() > 6 && (list_1.len() + list_raw.len()) > 9)) ? 5 : 4;
 
@@ -90,7 +97,7 @@ function InitIndustryLists()
         }
     }
 
-    return true;
+    return InitError.NONE;
 }
 
 function RandomizeIndustry(ascending, near_industries, near_industry_probability)

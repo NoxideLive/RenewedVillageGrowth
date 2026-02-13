@@ -40,7 +40,10 @@ STR_SB_WARNING_1         :Na mapě sa nachází víc měst než je hrací skript
 STR_SB_WARNING_2         :Inicializáce seznamu druhú zboží selhala. Bylo to spůsobeno neznámým typem newGRF průmyslu pro které procedurálně generování kategorií zboží není možné. {RED}Hrací skript se vypíná.{BLACK}
 STR_SB_WARNING_3         :Inicializáce seznamu druhú zboží selhala. Bylo to spůsobeno náhodnou tvorbou kategorií sboží podle průmyslových vstupů, pričem pro tento typ newGRF průmyslu není taková náhodní tvorba kategorií možná. {RED}}Hrací skript se vypíná.{BLACK}
 STR_SB_WARNING_4         :Parametr {ORANGE}Prostředí->Města->Rychlost růstu měst{BLACK} musí být nastaveno na jinou hodnotu než na nulová. {RED}Hrací skript se vypíná.{BLACK}
+STR_SB_WARNING_5         :Rozpoznání ekonomiky selhalo. Vynucená ekonomika neodpovídá seznamu nákladu ve hře. Ujistěte se, že je načten správný průmyslový set. {RED}Hrací skript je vypnut.{BLACK}
+STR_SB_WELCOME_TITLE     :Renewed Village Growth {NUM}.{NUM}
 STR_SB_WELCOME_DESC      :{SILVER}Renewed Village Growth (RVG){BLACK} je hrací skript, který {ORANGE}mění jak rostou města{BLACK} v OpenTTD. Každé město má definováno různe požadavky na dodávano zboží, které musá být - částečne nebo plne - měsíčne splňováno, aby mohli městá rychleji růst. Více informací se dá najít v {ORANGE}Readme souboru{BLACK}.
+STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Generovaná ekonomika{BLACK}: Žádná předdefinovaná ekonomika (FIRS, ECS, Base Set atd.) neodpovídá vašemu seznamu nákladu. Kategorie nákladu byly vytvořeny procedurálně a mohou být suboptimální. Pro lepší výsledky načtěte podporovaný průmyslový NewGRF (např. FIRS 5, ECS) nebo nastavte {ORANGE}Force economy{BLACK} v nastavení skriptu.
 STR_SB_WELCOME_CARGO     :Průmysl {SILVER}{STRING}{BLACK} pozestáva z {SILVER}{NUM} kategorií{BLACK}. Na splnění kategorie, dovez jeden nebo více zadefinovaných typů zboží pro danou kategorii do {ORANGE}stanice blízko daného města, která přijímá daný typ zboží{BLACK}. Splň požiadavky alespoň nad {SILVER}{NUM}%{BLACK} aby {ORANGE}město rástlo rychleji{BLACK}. Více informací ohledně akceptovaných kategorií jsou zobrazené v {ORANGE}Kategorie nákladu globální knihy příbéhú{BLACK}.
 STR_SB_WELCOME_LIMIT_GROWTH         :{SILVER}{CARGO_LIST}{BLACK} z tohto města dokáží {ORANGE}zastavit růst města{BLACK}. Převez alespoň {SILVER}{NUM}%{BLACK} těchto typů zboží vytvořeného v tomto městě pro {ORANGE}povolení růstu města{BLACK}. {STRING}
 STR_SB_WELCOME_LIMIT_GROWTH_DELAY   :Růst města se zastaví po {SILVER}{NUM} měsíc{P i ích}{BLACK} bez splnění týto požadavky.
@@ -76,6 +79,10 @@ STR_TOWNBOX_CARGO_STOP          :Nefunkční vývoz ze města :{} * {RED}{CARGO_
 STR_TOWNBOX_CARGO_LOW           :Nedostatečná infraštruktura dopravy :{} * {SILVER}{CARGO_LIST}{BLACK}{}Kategorie nákladu :
 STR_TOWNBOX_CARGO_DELAYED       :Nefunkční vývoz ze města :{} * {GOLD}{CARGO_LIST}{BLACK}{}Kategorie nákladu :
 STR_TOWNBOX_NOGROWTH            :Převez {SILVER}{CARGO_LIST}{BLACK} z tohoto města, aby město začalo růst.
+
+##### FORCE ECONOMY #####
+STR_FORCE_ECONOMY_AUTO          :Automatická detekce
+STR_FORCE_ECONOMY_VERSION_NONE  :—
 
 ##### ETERNAL LOVE #####
 STR_ETERNAL_LOVE_OUTSTANDING    :perfektní

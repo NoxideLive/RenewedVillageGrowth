@@ -70,6 +70,49 @@ enum Economies
     END,
 }
 
+// Maps force_economy setting value (1-20) to economy family. Order: Base Set, FIRS 5→1, ECS, PIRS, then others.
+::EconomyFamilyMap <- {
+    [1]  = [Economies.BASESET__TEMPERATE, Economies.BASESET__ARCTIC, Economies.BASESET__TROPICAL, Economies.BASESET__TOYLAND],
+    [2]  = [Economies.FIRS5__TEMPERATE_BASIC, Economies.FIRS5__ARCTIC_BASIC, Economies.FIRS5__TROPIC_BASIC, Economies.FIRS5__STEELTOWN, Economies.FIRS5__IN_A_HOT_COUNTRY],
+    [3]  = [Economies.FIRS4__TEMPERATE_BASIC, Economies.FIRS4__ARCTIC_BASIC, Economies.FIRS4__TROPIC_BASIC, Economies.FIRS4__STEELTOWN, Economies.FIRS4__IN_A_HOT_COUNTRY],
+    [4]  = [Economies.FIRS3__TEMPERATE_BASIC, Economies.FIRS3__ARCTIC_BASIC, Economies.FIRS3__TROPIC_BASIC, Economies.FIRS3__STEELTOWN, Economies.FIRS3__IN_A_HOT_COUNTRY, Economies.FIRS3__EXTREME],
+    [5]  = [Economies.FIRS2__TEMPERATE_BASIC, Economies.FIRS2__ARCTIC_BASIC, Economies.FIRS2__TROPIC_BASIC, Economies.FIRS2__IN_A_HOT_COUNTRY, Economies.FIRS2__EXTREME],
+    [6]  = [Economies.FIRS1__FIRS_ECONOMY, Economies.FIRS1__TEMPERATE_BASIC, Economies.FIRS1__ARCTIC_BASIC, Economies.FIRS1__TROPIC_BASIC, Economies.FIRS1__HEARTH_OF_DARKNESS],
+    [7]  = [Economies.ECS],
+    [8]  = [Economies.PIRS],
+    [9]  = [Economies.YETI],
+    [10] = [Economies.XIS__THE_LOT],
+    [11] = [Economies.AXIS__STEELTOWN, Economies.AXIS__TROPICAL_PARADISE],
+    [12] = [Economies.OTIS],
+    [13] = [Economies.IOTC],
+    [14] = [Economies.NAIS__NORTH_AMERICA],
+    [15] = [Economies.ITI],
+    [16] = [Economies.ITI2],
+    [17] = [Economies.LUMBERJACK],
+    [18] = [Economies.WRBI],
+    [19] = [Economies.REAL],
+    [20] = [Economies.MINIMALIST],
+};
+
+function GetForcedEconomyEnum() {
+    local economy = GSController.GetSetting("force_economy");
+    if (economy == 0) return null;
+    local version = GSController.GetSetting("force_economy_version");
+    local family = ::EconomyFamilyMap[economy];
+    if (version > 0 && family.find(version) != null)
+        return version;
+    return family[0];
+}
+
+function FormatCargoListForLog(list) {
+    local s = "";
+    foreach (i, label in list) {
+        if (i > 0) s += ",";
+        s += (label != null ? label : "null") + "(" + i + ")";
+    }
+    return s;
+}
+
 /* Cargolist of supported industry set's cargos. Used to check if
  * initial ingame cargo list matches the defined setting. Needs to be
  * updated if industry set cargos change.
@@ -228,16 +271,16 @@ function GetEconomyCargoList(economy, cargo_list) {
                 "STTB","STWR","STSW","SULP","TYCO","TYRE","VEHI","VBOD","VENG","VPTS",
                 "WELD","ZINC"];
     case(Economies.FIRS5__TEMPERATE_BASIC): // Temperate Basic
-        return ["BEER","RFPR","COAL","ENSP","FMSP","FISH","FRUT","GOOD","IORE","FOOD",
+        return ["BEER","CHEM","COAL","ENSP","FMSP","FISH","FRUT","GOOD","IORE","FOOD",
                 "KAOL","LVST","MAIL","MILK","PASS","SAND","SCMT","STEL"];
     case(Economies.FIRS5__ARCTIC_BASIC): // Arctic Basic
         return ["NH3_","ENSP","BOOM","FMSP","FERT","FISH","FOOD","KAOL","WOOD","MAIL",
                 "PAPR","PASS","PEAT","PHOS","POTA","PORE","SULP","WDPR","ZINC"];
     case(Economies.FIRS5__TROPIC_BASIC): // Tropic Basic
-        return ["BEER","BEAN","RFPR","JAVA","COPR","CORE","ENSP","FMSP","FISH","FOOD",
+        return ["BEER","BEAN","CHEM","JAVA","COPR","CORE","ENSP","FMSP","FISH","FOOD",
                 "FRUT","GOOD","GRAI","LVST","MAIL","NITR","OIL_","PASS","WOOL"];
     case(Economies.FIRS5__IN_A_HOT_COUNTRY): // In A Hot Country
-        return ["GRVL","BEER","BDMT","CASS","RFPR","CLAY","JAVA","COPR","CORE","DIAM",
+        return ["GRVL","BEER","BDMT","CASS","CHEM","CLAY","JAVA","COPR","CORE","DIAM",
                 "EOIL","ENSP","FMSP","FOOD","FRUT","GOOD","LVST","WOOD","MAIL","MAIZ",
                 "MNO2","NUTS","OIL_","PASS","PETR","PHOS","RUBR","SAND","WDPR"];
     case(Economies.XIS__THE_LOT): // XIS 0.6: The Lot
@@ -1133,15 +1176,17 @@ function DefineCargosBySettings(economy)
 /* This function compares the ingame initial cargo list to the
  * industry sets and cargoscheme supported by the script.
  */
-function DiscoverEconomyType() {
+function DiscoverEconomyType(force_economy_enum = null) {
+    if (force_economy_enum != null && force_economy_enum > 0) {
+        local economy_cargo_list = GetEconomyCargoList(force_economy_enum, ::CargoIDList);
+        return CompareCargoLists(economy_cargo_list, ::CargoIDList) ? force_economy_enum : Economies.NONE;
+    }
     local economy = Economies.NONE;
     for (local i = 1; i < Economies.END; ++i) {
         local economy_cargo_list = GetEconomyCargoList(i, ::CargoIDList);
-        if (CompareCargoLists(economy_cargo_list, ::CargoIDList)) {
+        if (CompareCargoLists(economy_cargo_list, ::CargoIDList))
             return i;
-        }
     }
-
     return economy;
 }
 
@@ -1218,12 +1263,29 @@ function InitCargoLists()
 
     DebugCargoLabels();         // Debug info: print cargo labels
 
-    // Get economy type based on cargo list
-    // Define cargo data accordingly to industry set
-    local economy = DiscoverEconomyType();
-    if (!DefineCargosBySettings(economy))
-        return false;
-    Log.Info("Economy: " + (economy == Economies.NONE ? "generated" : ("predefined " + economy)), Log.LVL_INFO);
+    local forced = GetForcedEconomyEnum();
+    local economy = DiscoverEconomyType(forced);
+    if (forced != null && economy == Economies.NONE) {
+        GSLog.Error("Economy mismatch: Forced economy does not match cargo list. See story book. Ensure the correct industry NewGRF is loaded.");
+        Log.Warning("Forced economy " + forced + " does not match. Expected vs actual cargo lists differ.");
+        local expected = GetEconomyCargoList(forced, ::CargoIDList);
+        Log.Info("Expected: " + FormatCargoListForLog(expected) + " | Actual: " + FormatCargoListForLog(::CargoIDList), Log.LVL_DEBUG);
+        return InitError.ECONOMY_MISMATCH;
+    }
+    if (economy == Economies.NONE) {
+        GSLog.Warning("Economy: Using generated categories — no predefined economy (FIRS, ECS, Base Set, etc.) matched your cargo list. For best results, load a supported industry NewGRF or use Force economy in GS settings to require a specific economy.");
+        Log.Info("Economy: Auto-detected. No predefined economy matched; using generated fallback. Cargo categories may be suboptimal. Load a supported industry set (e.g. FIRS 5, ECS, Base Set) or set Force economy in GS settings.", Log.LVL_INFO);
+    }
+    else if (forced != null)
+        Log.Info("Economy: Forced '" + economy + "' — cargo list matches.", Log.LVL_INFO);
+    else
+        Log.Info("Economy: predefined " + economy, Log.LVL_INFO);
+
+    if (!DefineCargosBySettings(economy)) {
+        Log.Warning("Cargo list initialization failed. The industry set may be unsupported or incompatible.", Log.LVL_INFO);
+        Log.Info("CargoIDList len=" + ::CargoIDList.len(), Log.LVL_DEBUG);
+        return InitError.CARGO_LIST;
+    }
 
     // Initializing some useful and often used variables
     ::CargoCatNum <- ::CargoCat.len();
@@ -1241,7 +1303,7 @@ function InitCargoLists()
     if (changed_min_pop_demand)
         SortCategoriesMinPopDemand();
 
-    return true;
+    return InitError.NONE;
 }
 
 /* Randomize fixed number of cargos per category and return cargo table. */
