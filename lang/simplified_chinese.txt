@@ -152,7 +152,7 @@ STR_ECONOMY_AXIS_TROPICAL       :AXIS 热带天堂
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :IOTC 加勒比海工业
 STR_ECONOMY_LUMBERJACK          :Lumberjack Industries
-STR_ECONOMY_WRBI                :Wannaroo Basic Industries
+STR_ECOMONY_WRBI                :Wannaroo Basic Industries
 STR_ECONOMY_ITI2                :ITI 改进城镇工业
 STR_ECONOMY_REAL                :Real Industries
 STR_ECONOMY_MINIMALIST          :Minimalist Industries
