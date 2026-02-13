@@ -76,6 +76,34 @@ class MainClass extends GSInfo
                 custom_value = 1,
                 flags = CONFIG_BOOLEAN | CONFIG_INGAME });
 
+        AddSetting({
+                name = "always_cat1",
+                description = "Cargo: Category 1 (deliver to town)",
+                easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0,
+                flags = CONFIG_INGAME, min_value = 0, max_value = 6 });
+        AddLabels("always_cat1", {
+                _0 = "None",
+                _1 = "Add: Passenger",
+                _2 = "Add: Mail",
+                _3 = "Add: Passenger and Mail",
+                _4 = "Replace with: Passenger",
+                _5 = "Replace with: Mail",
+                _6 = "Replace with: Passenger and Mail" });
+
+        AddSetting({
+                name = "always_limiter",
+                description = "Cargo: Limiter (transport out to unblock growth)",
+                easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0,
+                flags = CONFIG_INGAME, min_value = 0, max_value = 6 });
+        AddLabels("always_limiter", {
+                _0 = "None",
+                _1 = "Add: Passenger",
+                _2 = "Add: Mail",
+                _3 = "Add: Passenger and Mail",
+                _4 = "Replace with: Passenger",
+                _5 = "Replace with: Mail",
+                _6 = "Replace with: Passenger and Mail" });
+
         AddSetting({ name = "cargo_randomization",
                 description = "Randomization: Type",
                 easy_value = 1,

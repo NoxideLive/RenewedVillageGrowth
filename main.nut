@@ -34,14 +34,6 @@ enum Randomization {
     ASCENDING = 15,
 };
 
-enum InitError {
-    NONE,
-    CARGO_LIST,
-    INDUSTRY_LIST,
-    TOWN_NUMBER,
-    TOWN_GROWTH_RATE,
-}
-
 class MainClass extends GSController
 {
     companies = null;
@@ -165,6 +157,8 @@ function MainClass::Init()
                                              GSController.GetSetting("category_4_min_pop"),
                                              GSController.GetSetting("category_5_min_pop"),
                                              GSController.GetSetting("category_6_min_pop")];
+        ::SettingsTable.always_cat1 <- GSController.GetSetting("always_cat1");
+        ::SettingsTable.always_limiter <- GSController.GetSetting("always_limiter");
     }
 
     // Set current date
@@ -179,8 +173,9 @@ function MainClass::Init()
     }
     else {
         // Initialize cargo lists and variables
-        if (!InitCargoLists())
-            return InitError.CARGO_LIST;
+        local cargo_result = InitCargoLists();
+        if (cargo_result != InitError.NONE)
+            return cargo_result;
     }
 
     /* Check whether saved data are in the current save

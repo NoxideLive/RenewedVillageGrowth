@@ -46,6 +46,7 @@ STR_SB_WARNING_1         :地图上的城镇数量超出了游戏脚本可以保
 STR_SB_WARNING_2         :货物列表初始化失败。存在未知的工业 NewGRF 导致无法自动创建货物列表。{RED}已禁用游戏脚本。{BLACK}
 STR_SB_WARNING_3         :货物列表初始化失败。存在工业随机化选项导致无法自动创建工业类别。{RED}已禁用游戏脚本。{BLACK}
 STR_SB_WARNING_4         :必须将参数{ORANGE}环境->城镇->城镇增长速度（Environment->Towns->Town groth speed）{BLACK}设置为其他选项。{RED}已禁用游戏脚本。{BLACK}
+STR_SB_WARNING_6         :设置要求提供客运/邮件，但游戏中不存在。请加载提供这些货物的 NewGRF 或禁用该设置。{RED}游戏脚本已禁用。{BLACK}
 STR_SB_WELCOME_TITLE     :新发展（Renewed Village Growth）{NUM}.{NUM}
 STR_SB_WELCOME_DESC      :{SILVER}  新发展（RVG）{BLACK}游戏脚本{ORANGE}改变了 OpenTTD 中城镇的发展模式{BLACK}且为每个城镇增加了货物需求。更多信息请参阅{ORANGE}说明文件（README）{BLACK}。
 STR_SB_WELCOME_CARGO     :  当前选择的经济系统“{SILVER}{STRING}{BLACK}”包括{SILVER} {NUM} 种货物类别{BLACK}。为满足对于某类别的需求，需将任何属于该类别的货物运输至{ORANGE}接受该类别之城镇附近的车站{BLACK}。若满足需求的百分比高于{SILVER}{NUM}%{BLACK}将{ORANGE}加速城镇增长{BLACK}。有关货物类别的更多信息，请参阅{ORANGE}货物类别说明书页{BLACK}。

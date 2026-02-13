@@ -3,6 +3,11 @@
 
 function InitIndustryLists()
 {
+    // Get current cargo list and init economy var
+	InitCurrentCargoList();
+    ::Economy <- DiscoverEconomyType();
+    ::CargoLimiter <- ::CargoSettings[::Economy].limiter;
+
     local industry_type_list = GSIndustryTypeList();
 
     local list_raw = [];
@@ -12,8 +17,9 @@ function InitIndustryLists()
     local list_4 = [];
     foreach (industry, _ in industry_type_list) {
         local cargo_list = GSIndustryType.GetAcceptedCargo(industry);
-        cargo_list.RemoveItem(0); // exclude PASS
-        cargo_list.RemoveItem(2); // exclude MAIL
+        foreach (_, cargo_id in ::CargoLimiter) {
+            cargo_list.RemoveItem(cargo_id); // Remove limiter cargo types
+        }
 
         switch (cargo_list.Count())
         {
@@ -51,34 +57,7 @@ function InitIndustryLists()
     if ((::industries_raw.len() + ::industries_1.len() == 0) || ((::industries_2.len() < 3).tointeger() + (::industries_3.len() < 3).tointeger() + (::industries_4.len() < 3).tointeger() > 1))
         return false;
 
-    // Initialized required global variables
-    ::CargoIDList <- [];
-    for(local i = 0; i < 64; ++i) {
-        if (GSCargo.GetCargoLabel(i) == "LVPT") // CZTR ZBARVENI
-            ::CargoIDList.append(null);
-        else if (GSCargo.GetCargoLabel(i) == null) {
-            local j = i + 1;
-            local list_end = true;
-            while (j < 64) {
-                if (GSCargo.GetCargoLabel(j) != null) {
-                    list_end = false;
-                    break;
-                }
-                j++;
-            }
-
-            if (list_end)
-                break;
-            else
-                ::CargoIDList.append(GSCargo.GetCargoLabel(i));
-        }
-        else
-            ::CargoIDList.append(GSCargo.GetCargoLabel(i));
-    }
-
-    ::CargoLimiter <- [0, 2];
     ::CargoCatNum <- (list_4.len() > 0 || (list_3.len() > 6 && (list_1.len() + list_raw.len()) > 9)) ? 5 : 4;
-    ::Economy <- DiscoverEconomyType();
 
     if (::CargoCatNum == 4) {
         ::CargoMinPopDemand <- [0, 1000, 4000, 8000];
@@ -452,7 +431,14 @@ function GetCargoCatFromIndustryCat(industry_cat)
             local cargo_list = GSIndustryType.GetAcceptedCargo(ind);
             foreach (cargo, _ in cargo_list) {
                 // Ignore PASS and MAIL
-                if (cargo == 0 || cargo == 2)
+                local skip_iteration = false;
+                foreach (_, cargo_id in ::CargoLimiter) {
+                    if (cargo == cargo_id) {
+                        skip_iteration = true;
+                        break;
+                    }
+                }
+                if (skip_iteration)
                     continue;
 
                 local found = false;
@@ -702,8 +688,12 @@ function GetTownsNearbyIndustryPerCategory()
 
             // Determine the category of this industry type
             local cargo_list = GSIndustryType.GetAcceptedCargo(industry_type_id);
-            cargo_list.RemoveItem(0); // exclude PASS
-            cargo_list.RemoveItem(2); // exclude MAIL
+
+            // Ignore PASS and MAIL
+            foreach(_, cargo_id in ::CargoLimiter) {
+                cargo_list.RemoveItem(cargo_id);
+            }
+            
             local category = -1;
             switch (cargo_list.Count())
             {
