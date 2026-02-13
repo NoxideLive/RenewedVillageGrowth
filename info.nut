@@ -77,18 +77,17 @@ class MainClass extends GSInfo
         AddLabels("force_economy", {
                 _0 = "Auto Detect",
                 _1 = "Generated",
-                _2 = "FIRS 5 Temperate", _3 = "FIRS 5 Arctic", _4 = "FIRS 5 Tropic", _5 = "FIRS 5 Steeltown", _6 = "FIRS 5 In a Hot Country",
-                _7 = "ECS", _8 = "YETI",
-                _9 = "Base Temperate", _10 = "Base Arctic", _11 = "Base Tropical", _12 = "Base Toyland",
-                _13 = "NAIS North America", _14 = "XIS The Lot", _15 = "AXIS Steel City", _16 = "AXIS Tropical Paradise",
-                _17 = "Pikka's Industries Redux Set (PIRS 2022)",
+                _2 = "Base Temperate", _3 = "Base Arctic", _4 = "Base Tropical", _5 = "Base Toyland",
+                _6 = "FIRS 5 Temperate", _7 = "FIRS 5 Arctic", _8 = "FIRS 5 Tropic", _9 = "FIRS 5 Steeltown", _10 = "FIRS 5 In a Hot Country",
+                _11 = "ECS", _12 = "YETI", _13 = "NAIS North America", _14 = "XIS The Lot",
+                _15 = "AXIS Steel City", _16 = "AXIS Tropical Paradise", _17 = "Pikka's Industries Redux Set (PIRS 2022)",
                 _18 = "FIRS 4 Temperate", _19 = "FIRS 4 Arctic", _20 = "FIRS 4 Tropic", _21 = "FIRS 4 Steeltown", _22 = "FIRS 4 In a Hot Country",
                 _23 = "FIRS 3 Temperate", _24 = "FIRS 3 Arctic", _25 = "FIRS 3 Tropic", _26 = "FIRS 3 Steeltown", _27 = "FIRS 3 In a Hot Country", _28 = "FIRS 3 Extreme",
-                _29 = "OTIS", _30 = "Industries of the Caribbean", _31 = "Lumberjack Industries",
-                _32 = "Wannaroo Basic Industries", _33 = "Improved Town Industries", _34 = "Improved Town Industries 2",
-                _35 = "Real Industries", _36 = "Minimalist Industries",
-                _37 = "FIRS 2 Temperate", _38 = "FIRS 2 Arctic", _39 = "FIRS 2 Tropic", _40 = "FIRS 2 In a Hot Country", _41 = "FIRS 2 Extreme",
-                _42 = "FIRS 1 FIRS", _43 = "FIRS 1 Temperate", _44 = "FIRS 1 Arctic", _45 = "FIRS 1 Tropic", _46 = "FIRS 1 Hearth of Darkness"
+                _29 = "FIRS 2 Temperate", _30 = "FIRS 2 Arctic", _31 = "FIRS 2 Tropic", _32 = "FIRS 2 In a Hot Country", _33 = "FIRS 2 Extreme",
+                _34 = "FIRS 1 FIRS", _35 = "FIRS 1 Temperate", _36 = "FIRS 1 Arctic", _37 = "FIRS 1 Tropic", _38 = "FIRS 1 Hearth of Darkness",
+                _39 = "OTIS", _40 = "Industries of the Caribbean", _41 = "Lumberjack Industries",
+                _42 = "Wannaroo Basic Industries", _43 = "Improved Town Industries", _44 = "Improved Town Industries 2",
+                _45 = "Real Industries", _46 = "Minimalist Industries"
         });
 
         AddSetting({

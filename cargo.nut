@@ -72,24 +72,23 @@ enum Economies
 
 const FORCE_GENERATED = 46;
 
-// Maps setting value (2-46) to economy enum. Order: main line (FIRS5, ECS, YETI, Base, etc.) first, others, outdated last.
+// Maps setting value (2-46) to economy enum. Order: Auto->Gen->Base->FIRS5->Main stream->Minor stream->Outdated FIRS->Minor sets.
 const SETTING_TO_ECONOMY = [
+    Economies.BASESET__TEMPERATE, Economies.BASESET__ARCTIC, Economies.BASESET__TROPICAL, Economies.BASESET__TOYLAND,
     Economies.FIRS5__TEMPERATE_BASIC, Economies.FIRS5__ARCTIC_BASIC, Economies.FIRS5__TROPIC_BASIC,
     Economies.FIRS5__STEELTOWN, Economies.FIRS5__IN_A_HOT_COUNTRY,
-    Economies.ECS, Economies.YETI,
-    Economies.BASESET__TEMPERATE, Economies.BASESET__ARCTIC, Economies.BASESET__TROPICAL, Economies.BASESET__TOYLAND,
-    Economies.NAIS__NORTH_AMERICA, Economies.XIS__THE_LOT, Economies.AXIS__STEELTOWN, Economies.AXIS__TROPICAL_PARADISE,
-    Economies.PIRS,
+    Economies.ECS, Economies.YETI, Economies.NAIS__NORTH_AMERICA, Economies.XIS__THE_LOT,
+    Economies.AXIS__STEELTOWN, Economies.AXIS__TROPICAL_PARADISE, Economies.PIRS,
     Economies.FIRS4__TEMPERATE_BASIC, Economies.FIRS4__ARCTIC_BASIC, Economies.FIRS4__TROPIC_BASIC,
     Economies.FIRS4__STEELTOWN, Economies.FIRS4__IN_A_HOT_COUNTRY,
     Economies.FIRS3__TEMPERATE_BASIC, Economies.FIRS3__ARCTIC_BASIC, Economies.FIRS3__TROPIC_BASIC,
     Economies.FIRS3__STEELTOWN, Economies.FIRS3__IN_A_HOT_COUNTRY, Economies.FIRS3__EXTREME,
-    Economies.OTIS, Economies.IOTC, Economies.LUMBERJACK, Economies.WRBI,
-    Economies.ITI, Economies.ITI2, Economies.REAL, Economies.MINIMALIST,
     Economies.FIRS2__TEMPERATE_BASIC, Economies.FIRS2__ARCTIC_BASIC, Economies.FIRS2__TROPIC_BASIC,
     Economies.FIRS2__IN_A_HOT_COUNTRY, Economies.FIRS2__EXTREME,
     Economies.FIRS1__FIRS_ECONOMY, Economies.FIRS1__TEMPERATE_BASIC, Economies.FIRS1__ARCTIC_BASIC,
-    Economies.FIRS1__TROPIC_BASIC, Economies.FIRS1__HEARTH_OF_DARKNESS
+    Economies.FIRS1__TROPIC_BASIC, Economies.FIRS1__HEARTH_OF_DARKNESS,
+    Economies.OTIS, Economies.IOTC, Economies.LUMBERJACK, Economies.WRBI,
+    Economies.ITI, Economies.ITI2, Economies.REAL, Economies.MINIMALIST
 ];
 
 function GetForcedEconomyEnum() {
