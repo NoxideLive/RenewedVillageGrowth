@@ -19,6 +19,7 @@ enum CatLabels
     FINAL_AND_VEHICLES = 16
 }
 
+// Order matches Economy setting dropdown: Base, FIRS5, Main stream, FIRS4, FIRS3, FIRS2, FIRS1, Minor sets
 enum Economies
 {
     NONE,
@@ -26,76 +27,57 @@ enum Economies
     BASESET__ARCTIC,
     BASESET__TROPICAL,
     BASESET__TOYLAND,
-    FIRS1__FIRS_ECONOMY, // 1.4
-    FIRS1__TEMPERATE_BASIC, // 1.4
-    FIRS1__ARCTIC_BASIC, // 1.4
-    FIRS1__TROPIC_BASIC, // 1.4
-    FIRS1__HEARTH_OF_DARKNESS, // 1.4
-    ECS, // 1.2
-    FIRS2__TEMPERATE_BASIC, // 2.1.5
-    FIRS2__ARCTIC_BASIC, // 2.1.5
-    FIRS2__TROPIC_BASIC, // 2.1.5
-    FIRS2__IN_A_HOT_COUNTRY, // 2.1.5
-    FIRS2__EXTREME, // 2.1.5
-    YETI, // 0.1.6
-    FIRS3__TEMPERATE_BASIC, // 3.0.12
-    FIRS3__ARCTIC_BASIC, // 3.0.12
-    FIRS3__TROPIC_BASIC, // 3.0.12
-    FIRS3__STEELTOWN, // 3.0.12
-    FIRS3__IN_A_HOT_COUNTRY, // 3.0.12 and 4.0.0 - 4.1.x
-    FIRS3__EXTREME, // 3.0.12
-    NAIS__NORTH_AMERICA, // 1.0.6
-    ITI, // 1.6
-    FIRS4__TEMPERATE_BASIC, // 4.3.0
-    FIRS4__ARCTIC_BASIC, // 4.3.0
-    FIRS4__TROPIC_BASIC, // 4.3.0
-    FIRS4__STEELTOWN, // 4.3.0
-    FIRS4__IN_A_HOT_COUNTRY, // 4.3.0
     FIRS5__TEMPERATE_BASIC, // 5.0.0
-    FIRS5__ARCTIC_BASIC, // 5.0.0
-    FIRS5__TROPIC_BASIC, // 5.0.0
-    FIRS5__STEELTOWN, // 5.0.0
-    FIRS5__IN_A_HOT_COUNTRY, // 5.0.0
+    FIRS5__ARCTIC_BASIC,
+    FIRS5__TROPIC_BASIC,
+    FIRS5__STEELTOWN,
+    FIRS5__IN_A_HOT_COUNTRY,
+    ECS, // 1.2
+    YETI, // 0.1.6
+    NAIS__NORTH_AMERICA, // 1.0.6
     XIS__THE_LOT, // 0.6
     AXIS__STEELTOWN, // 2.2.0
-    AXIS__TROPICAL_PARADISE, // 2.2.0
+    AXIS__TROPICAL_PARADISE,
+    PIRS, // PIRS 2022
+    FIRS4__TEMPERATE_BASIC, // 4.3.0
+    FIRS4__ARCTIC_BASIC,
+    FIRS4__TROPIC_BASIC,
+    FIRS4__STEELTOWN,
+    FIRS4__IN_A_HOT_COUNTRY,
+    FIRS3__TEMPERATE_BASIC, // 3.0.12
+    FIRS3__ARCTIC_BASIC,
+    FIRS3__TROPIC_BASIC,
+    FIRS3__STEELTOWN,
+    FIRS3__IN_A_HOT_COUNTRY,
+    FIRS3__EXTREME,
+    FIRS2__TEMPERATE_BASIC, // 2.1.5
+    FIRS2__ARCTIC_BASIC,
+    FIRS2__TROPIC_BASIC,
+    FIRS2__IN_A_HOT_COUNTRY,
+    FIRS2__EXTREME,
+    FIRS1__FIRS_ECONOMY, // 1.4
+    FIRS1__TEMPERATE_BASIC,
+    FIRS1__ARCTIC_BASIC,
+    FIRS1__TROPIC_BASIC,
+    FIRS1__HEARTH_OF_DARKNESS,
     OTIS, // 05
     IOTC, // 0.1.4
     LUMBERJACK, // 0.1.0
     WRBI, // 1200
+    ITI, // 1.6
     ITI2, // 2.14
     REAL, // Real Industries Beta
     MINIMALIST, // 1.1
-    PIRS, // PIRS 2022
     END,
 }
 
-const FORCE_GENERATED = 46;
-
-// Maps setting value (2-46) to economy enum. Order: Auto->Gen->Base->FIRS5->Main stream->Minor stream->Outdated FIRS->Minor sets.
-const SETTING_TO_ECONOMY = [
-    Economies.BASESET__TEMPERATE, Economies.BASESET__ARCTIC, Economies.BASESET__TROPICAL, Economies.BASESET__TOYLAND,
-    Economies.FIRS5__TEMPERATE_BASIC, Economies.FIRS5__ARCTIC_BASIC, Economies.FIRS5__TROPIC_BASIC,
-    Economies.FIRS5__STEELTOWN, Economies.FIRS5__IN_A_HOT_COUNTRY,
-    Economies.ECS, Economies.YETI, Economies.NAIS__NORTH_AMERICA, Economies.XIS__THE_LOT,
-    Economies.AXIS__STEELTOWN, Economies.AXIS__TROPICAL_PARADISE, Economies.PIRS,
-    Economies.FIRS4__TEMPERATE_BASIC, Economies.FIRS4__ARCTIC_BASIC, Economies.FIRS4__TROPIC_BASIC,
-    Economies.FIRS4__STEELTOWN, Economies.FIRS4__IN_A_HOT_COUNTRY,
-    Economies.FIRS3__TEMPERATE_BASIC, Economies.FIRS3__ARCTIC_BASIC, Economies.FIRS3__TROPIC_BASIC,
-    Economies.FIRS3__STEELTOWN, Economies.FIRS3__IN_A_HOT_COUNTRY, Economies.FIRS3__EXTREME,
-    Economies.FIRS2__TEMPERATE_BASIC, Economies.FIRS2__ARCTIC_BASIC, Economies.FIRS2__TROPIC_BASIC,
-    Economies.FIRS2__IN_A_HOT_COUNTRY, Economies.FIRS2__EXTREME,
-    Economies.FIRS1__FIRS_ECONOMY, Economies.FIRS1__TEMPERATE_BASIC, Economies.FIRS1__ARCTIC_BASIC,
-    Economies.FIRS1__TROPIC_BASIC, Economies.FIRS1__HEARTH_OF_DARKNESS,
-    Economies.OTIS, Economies.IOTC, Economies.LUMBERJACK, Economies.WRBI,
-    Economies.ITI, Economies.ITI2, Economies.REAL, Economies.MINIMALIST
-];
+const FORCE_GENERATED = Economies.END;  // Sentinel: use generated economy (setting 1)
 
 function GetForcedEconomyEnum() {
     local setting = GSController.GetSetting("force_economy");
     if (setting == 0) return null;
     if (setting == 1) return FORCE_GENERATED;
-    return SETTING_TO_ECONOMY[setting - 2];
+    return setting - 1;  // setting 2 -> enum 1, setting 46 -> enum 45
 }
 
 function FormatCargoListForLog(list) {
@@ -1168,15 +1150,21 @@ function DefineCargosBySettings(economy)
     local always_cat1 = GSController.GetSetting("always_cat1");
     local always_limiter = GSController.GetSetting("always_limiter");
 
-    local function FindCargoByLabel(label) {
+    local FindInArray = function(arr, val) {
+        for (local i = 0; i < arr.len(); i++)
+            if (arr[i] == val) return i;
+        return null;
+    };
+
+    local FindCargoByLabel = function(label) {
         if (!::CargoIDList) return null;
         foreach (idx, l in ::CargoIDList) {
             if (l == label) return idx;
         }
         return null;
-    }
+    };
 
-    local function GetCargoIdsForMode(mode) {
+    local GetCargoIdsForMode = function(mode):(FindCargoByLabel) {
         if (mode == 0) return [];
         local pax = FindCargoByLabel("PASS");
         local mail = FindCargoByLabel("MAIL");
@@ -1193,7 +1181,7 @@ function DefineCargosBySettings(economy)
             return [pax, mail];
         }
         return [];
-    }
+    };
 
     // Validate: if setting enabled but required cargos missing, fail
     local cat1_ids = GetCargoIdsForMode(always_cat1);
@@ -1208,16 +1196,16 @@ function DefineCargosBySettings(economy)
         if (always_cat1 <= 3) {
             foreach (cargo_id in cat1_ids) {
                 for (local c = 1; c < ::CargoCat.len(); c++) {
-                    local idx = ::CargoCat[c].find(cargo_id);
+                    local idx = FindInArray(::CargoCat[c], cargo_id);
                     if (idx != null) ::CargoCat[c].remove(idx);
                 }
-                if (::CargoCat[0].find(cargo_id) == null)
+                if (FindInArray(::CargoCat[0], cargo_id) == null)
                     ::CargoCat[0].append(cargo_id);
             }
         } else {
             foreach (cargo_id in cat1_ids) {
                 for (local c = 1; c < ::CargoCat.len(); c++) {
-                    local idx = ::CargoCat[c].find(cargo_id);
+                    local idx = FindInArray(::CargoCat[c], cargo_id);
                     if (idx != null) ::CargoCat[c].remove(idx);
                 }
             }
@@ -1229,7 +1217,7 @@ function DefineCargosBySettings(economy)
     if (always_limiter >= 1) {
         if (always_limiter <= 3) {
             foreach (cargo_id in limiter_ids) {
-                if (::CargoLimiter.find(cargo_id) == null)
+                if (FindInArray(::CargoLimiter, cargo_id) == null)
                     ::CargoLimiter.append(cargo_id);
             }
         } else {

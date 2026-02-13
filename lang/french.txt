@@ -93,38 +93,47 @@ STR_ECONOMY_BASESET_TEMPERATE   :Basique - Environnement tempéré
 STR_ECONOMY_BASESET_ARCTIC      :Basique - Environnement arctique
 STR_ECONOMY_BASESET_TROPICAL    :Basique - Environnement tropical
 STR_ECONOMY_BASESET_TOYLAND     :Basique - Environnement Monde des Jouets
+STR_ECONOMY_FIRS5_TEMPERATE     :FIRS 5 Tempéré
+STR_ECONOMY_FIRS5_ARCTIC        :FIRS 5 Arctique
+STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Tropical
+STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Cité de l'acier
+STR_ECONOMY_FIRS5_IAHC          :FIRS 5 Dans un pays chaud
+STR_ECONOMY_ECS                 :ECS
+STR_ECONOMY_YETI                :YETI
+STR_ECONOMY_NAIS_NA             :NAIS North America
+STR_ECONOMY_XIS_LOT             :XIS The Lot
+STR_ECONOMY_AXIS_STEELTOWN      :AXIS Cité de l'acier
+STR_ECONOMY_AXIS_TROPICAL       :AXIS Paradis tropical
+STR_ECONOMY_PIRS                :Pikka's Industries Redux Set (PIRS 2022)
+STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Tempéré
+STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Arctique
+STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropical
+STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Cité de l'acier
+STR_ECONOMY_FIRS4_IAHC          :FIRS 4 Dans un pays chaud
+STR_ECONOMY_FIRS3_TEMPERATE     :FIRS 3 Tempéré
+STR_ECONOMY_FIRS3_ARCTIC        :FIRS 3 Arctique
+STR_ECONOMY_FIRS3_TROPIC        :FIRS 3 Tropical
+STR_ECONOMY_FIRS3_STEELTOWN     :FIRS 3 Cité de l'acier
+STR_ECONOMY_FIRS3_IAHC          :FIRS 3 Dans un pays chaud
+STR_ECONOMY_FIRS3_EXTREME       :FIRS 3 Extrême
+STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 2 Tempéré
+STR_ECONOMY_FIRS2_ARCTIC        :FIRS 2 Arctique
+STR_ECONOMY_FIRS2_TROPIC        :FIRS 2 Tropical
+STR_ECONOMY_FIRS2_IAHC          :FIRS 2 Dans un pays chaud
+STR_ECONOMY_FIRS2_EXTREME       :FIRS 2 Extrême
 STR_ECONOMY_FIRS1_FIRS          :FIRS 1 FIRS
 STR_ECONOMY_FIRS1_TEMPERATE     :FIRS 1 Tempéré
 STR_ECONOMY_FIRS1_ARCTIC        :FIRS 1 Arctique
 STR_ECONOMY_FIRS1_TROPIC        :FIRS 1 Tropical
 STR_ECONOMY_FIRS1_HOD           :FIRS 1 Au cœur des ténèbres
-STR_ECONOMY_ECS                 :ECS
-STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 2 Tempéré
-STR_ECONOMY_FIRS2_ARCTIC        :FIRS 2 Arctique
-STR_ECONOMY_FIRS2_TROPIC        :FIRS 2 Tropical
-STR_ECONOMY_FIRS2_IAHC          :FIRS 2 Dans un pays chaud
-STR_ECONOMY_FIRS2_HOD           :FIRS 2 Au cœur des ténèbres
-STR_ECONOMY_YETI                :YETI
-STR_ECONOMY_FIRS3_TEMPERATE     :FIRS 3 Tempéré
-STR_ECONOMY_FIRS3_ARCTIC        :FIRS 3 Arctique
-STR_ECONOMY_FIRS3_TROPIC        :FIRS 3 Tropical
-STR_ECONOMY_FIRS3_STEELTOWN     :FIRS 3 Cité de l’acier
-STR_ECONOMY_FIRS3_IAHC          :FIRS 3 Dans un pays chaud
-STR_ECONOMY_FIRS3_EXTREME       :FIRS 3 Extrême
-STR_ECONOMY_NAIS_NA             :NAIS North America
-STR_ECONOMY_ITI                 :Improved Town Industries
-STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Tempéré
-STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Arctique
-STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropical
-STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Cité de l’acier
-STR_ECONOMY_FIRS4_IAHC          :FIRS 4 Dans un pays chaud
-STR_ECONOMY_XIS_LOT             :XIS The Lot
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Industries of the Caribbean
 STR_ECONOMY_LUMBERJACK          :Lumberjack Industries
-STR_ECOMONY_WRBI                :Wannaroo Basic Industries
+STR_ECONOMY_WRBI                :Wannaroo Basic Industries
+STR_ECONOMY_ITI                 :Improved Town Industries
 STR_ECONOMY_ITI2                :Improved Town Industries
 STR_ECONOMY_REAL                :Real Industries
+STR_ECONOMY_MINIMALIST          :Minimalist Industries
 
 ##### ETERNAL LOVE #####
 STR_ETERNAL_LOVE_OUTSTANDING    :exceptionnel

@@ -114,52 +114,53 @@ STR_FORCE_ECONOMY_AUTO          :Автовизначення
 STR_FORCE_ECONOMY_VERSION_NONE  :—
 
 ##### ECONOMIES #####
+# Order must match Economies enum
 STR_ECONOMY_NONE                :Згенерована
 STR_ECONOMY_BASESET_TEMPERATE   :Базова помірна
 STR_ECONOMY_BASESET_ARCTIC      :Базова арктична
 STR_ECONOMY_BASESET_TROPICAL    :Базова тропічна
 STR_ECONOMY_BASESET_TOYLAND     :Базова іграшкова
-STR_ECONOMY_FIRS1_FIRS          :FIRS 1 FIRS
-STR_ECONOMY_FIRS1_TEMPERATE     :FIRS 1 Помірна
-STR_ECONOMY_FIRS1_ARCTIC        :FIRS 1 Арктична
-STR_ECONOMY_FIRS1_TROPIC        :FIRS 1 Тропічна
-STR_ECONOMY_FIRS1_HOD           :FIRS 1 Серце темряви
+STR_ECONOMY_FIRS5_TEMPERATE     :FIRS 5 Помірна
+STR_ECONOMY_FIRS5_ARCTIC        :FIRS 5 Арктична
+STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Тропічна
+STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Сталеве місто
+STR_ECONOMY_FIRS5_IAHC          :FIRS 5 У жаркій країні
 STR_ECONOMY_ECS                 :ECS
-STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 2 Помірна
-STR_ECONOMY_FIRS2_ARCTIC        :FIRS 2 Арктична
-STR_ECONOMY_FIRS2_TROPIC        :FIRS 2 Тропічна
-STR_ECONOMY_FIRS2_IAHC          :FIRS 2 У жаркій країні
-STR_ECONOMY_FIRS2_HOD           :FIRS 2 Серце темряви
 STR_ECONOMY_YETI                :YETI
+STR_ECONOMY_NAIS_NA             :NAIS Північна Америка
+STR_ECONOMY_XIS_LOT             :XIS Усе разом
+STR_ECONOMY_AXIS_STEELTOWN      :AXIS Сталеве місто
+STR_ECONOMY_AXIS_TROPICAL       :AXIS Тропічний рай
+STR_ECONOMY_PIRS                :Набір переробних індустрій Пікки (PIRS 2022)
+STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Помірна
+STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Арктична
+STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Тропічна
+STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Сталеве місто
+STR_ECONOMY_FIRS4_IAHC          :FIRS 4 У жаркій країні
 STR_ECONOMY_FIRS3_TEMPERATE     :FIRS 3 Помірна
 STR_ECONOMY_FIRS3_ARCTIC        :FIRS 3 Арктична
 STR_ECONOMY_FIRS3_TROPIC        :FIRS 3 Тропічна
 STR_ECONOMY_FIRS3_STEELTOWN     :FIRS 3 Сталеве місто
 STR_ECONOMY_FIRS3_IAHC          :FIRS 3 У жаркій країні
 STR_ECONOMY_FIRS3_EXTREME       :FIRS 3 Екстремальна
-STR_ECONOMY_NAIS_NA             :NAIS Північна Америка
-STR_ECONOMY_ITI                 :Покращені міські індустрії
-STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Помірна
-STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Арктична
-STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Тропічна
-STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Сталеве місто
-STR_ECONOMY_FIRS4_IAHC          :FIRS 4 У жаркій країні
-STR_ECONOMY_FIRS5_TEMPERATE     :FIRS 5 Помірна
-STR_ECONOMY_FIRS5_ARCTIC        :FIRS 5 Арктична
-STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Тропічна
-STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Сталеве місто
-STR_ECONOMY_FIRS5_IAHC          :FIRS 5 У жаркій країні
-STR_ECONOMY_XIS_LOT             :XIS Усе разом
-STR_ECONOMY_AXIS_STEELTOWN      :AXIS Сталеве місто
-STR_ECONOMY_AXIS_TROPICAL       :AXIS Тропічний рай
+STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 2 Помірна
+STR_ECONOMY_FIRS2_ARCTIC        :FIRS 2 Арктична
+STR_ECONOMY_FIRS2_TROPIC        :FIRS 2 Тропічна
+STR_ECONOMY_FIRS2_IAHC          :FIRS 2 У жаркій країні
+STR_ECONOMY_FIRS2_EXTREME       :FIRS 2 Екстремальна
+STR_ECONOMY_FIRS1_FIRS          :FIRS 1 FIRS
+STR_ECONOMY_FIRS1_TEMPERATE     :FIRS 1 Помірна
+STR_ECONOMY_FIRS1_ARCTIC        :FIRS 1 Арктична
+STR_ECONOMY_FIRS1_TROPIC        :FIRS 1 Тропічна
+STR_ECONOMY_FIRS1_HOD           :FIRS 1 Серце темряви
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Індустрії Карибських островів
 STR_ECONOMY_LUMBERJACK          :Лісорубні індустрії
-STR_ECOMONY_WRBI                :Ваннару базові індустрії
+STR_ECONOMY_WRBI                :Ваннару базові індустрії
+STR_ECONOMY_ITI                 :Покращені міські індустрії
 STR_ECONOMY_ITI2                :Покращені міські індустрії 2
 STR_ECONOMY_REAL                :Реальні індустрії
 STR_ECONOMY_MINIMALIST          :Мінімалістичні індустрії
-STR_ECONOMY_PIRS                :Набір переробних індустрій Пікки (PIRS 2022)
 
 ##### ETERNAL LOVE #####
 STR_ETERNAL_LOVE_OUTSTANDING    :відмінного

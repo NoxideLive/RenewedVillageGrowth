@@ -1,0 +1,9 @@
+---
+description: Squirrel 2.2 compatibility for OpenTTD .nut scripts
+globs: **/*.nut
+alwaysApply: false
+---
+
+# Squirrel 2.2
+
+When editing .nut files, apply the **squirrel-2-2-compatibility** skill.

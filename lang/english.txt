@@ -114,52 +114,53 @@ STR_FORCE_ECONOMY_AUTO          :Auto detect
 STR_FORCE_ECONOMY_VERSION_NONE  :—
 
 ##### ECONOMIES #####
+# Order must match Economies enum: Base, FIRS5, Main stream, FIRS4, FIRS3, FIRS2, FIRS1, Minor sets
 STR_ECONOMY_NONE                :Generated
 STR_ECONOMY_BASESET_TEMPERATE   :Base Temperate
 STR_ECONOMY_BASESET_ARCTIC      :Base Arctic
 STR_ECONOMY_BASESET_TROPICAL    :Base Tropical
 STR_ECONOMY_BASESET_TOYLAND     :Base Toyland
-STR_ECONOMY_FIRS1_FIRS          :FIRS 1 FIRS
-STR_ECONOMY_FIRS1_TEMPERATE     :FIRS 1 Temperate
-STR_ECONOMY_FIRS1_ARCTIC        :FIRS 1 Arctic
-STR_ECONOMY_FIRS1_TROPIC        :FIRS 1 Tropic
-STR_ECONOMY_FIRS1_HOD           :FIRS 1 Hearth Of Darkness
+STR_ECONOMY_FIRS5_TEMPERATE     :FIRS 5 Temperate
+STR_ECONOMY_FIRS5_ARCTIC        :FIRS 5 Arctic
+STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Tropic
+STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Steeltown
+STR_ECONOMY_FIRS5_IAHC          :FIRS 5 In A Hot Country
 STR_ECONOMY_ECS                 :ECS
-STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 1 Temperate
-STR_ECONOMY_FIRS2_ARCTIC        :FIRS 1 Arctic
-STR_ECONOMY_FIRS2_TROPIC        :FIRS 1 Tropic
-STR_ECONOMY_FIRS2_IAHC          :FIRS 1 In A Hot Country
-STR_ECONOMY_FIRS2_HOD           :FIRS 1 Hearth Of Darkness
 STR_ECONOMY_YETI                :YETI
+STR_ECONOMY_NAIS_NA             :NAIS North America
+STR_ECONOMY_XIS_LOT             :XIS The Lot
+STR_ECONOMY_AXIS_STEELTOWN      :AXIS Steel City
+STR_ECONOMY_AXIS_TROPICAL       :AXIS Tropical Paradise
+STR_ECONOMY_PIRS                :Pikka's Industries Redux Set (PIRS 2022)
+STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Temperate
+STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Arctic
+STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropic
+STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Steeltown
+STR_ECONOMY_FIRS4_IAHC          :FIRS 4 In A Hot Country
 STR_ECONOMY_FIRS3_TEMPERATE     :FIRS 3 Temperate
 STR_ECONOMY_FIRS3_ARCTIC        :FIRS 3 Arctic
 STR_ECONOMY_FIRS3_TROPIC        :FIRS 3 Tropic
 STR_ECONOMY_FIRS3_STEELTOWN     :FIRS 3 Steeltown
 STR_ECONOMY_FIRS3_IAHC          :FIRS 3 In A Hot Country
 STR_ECONOMY_FIRS3_EXTREME       :FIRS 3 Extreme
-STR_ECONOMY_NAIS_NA             :NAIS North America
-STR_ECONOMY_ITI                 :Improved Town Industries
-STR_ECONOMY_FIRS4_TEMPERATE     :FIRS 4 Temperate
-STR_ECONOMY_FIRS4_ARCTIC        :FIRS 4 Arctic
-STR_ECONOMY_FIRS4_TROPIC        :FIRS 4 Tropic
-STR_ECONOMY_FIRS4_STEELTOWN     :FIRS 4 Steeltown
-STR_ECONOMY_FIRS4_IAHC          :FIRS 4 In A Hot Country
-STR_ECONOMY_FIRS5_TEMPERATE     :FIRS 5 Temperate
-STR_ECONOMY_FIRS5_ARCTIC        :FIRS 5 Arctic
-STR_ECONOMY_FIRS5_TROPIC        :FIRS 5 Tropic
-STR_ECONOMY_FIRS5_STEELTOWN     :FIRS 5 Steeltown
-STR_ECONOMY_FIRS5_IAHC          :FIRS 5 In A Hot Country
-STR_ECONOMY_XIS_LOT             :XIS The Lot
-STR_ECONOMY_AXIS_STEELTOWN      :AXIS Steel City
-STR_ECONOMY_AXIS_TROPICAL       :AXIS Tropical Paradise
+STR_ECONOMY_FIRS2_TEMPERATE     :FIRS 2 Temperate
+STR_ECONOMY_FIRS2_ARCTIC        :FIRS 2 Arctic
+STR_ECONOMY_FIRS2_TROPIC        :FIRS 2 Tropic
+STR_ECONOMY_FIRS2_IAHC          :FIRS 2 In A Hot Country
+STR_ECONOMY_FIRS2_EXTREME       :FIRS 2 Extreme
+STR_ECONOMY_FIRS1_FIRS          :FIRS 1 FIRS
+STR_ECONOMY_FIRS1_TEMPERATE     :FIRS 1 Temperate
+STR_ECONOMY_FIRS1_ARCTIC        :FIRS 1 Arctic
+STR_ECONOMY_FIRS1_TROPIC        :FIRS 1 Tropic
+STR_ECONOMY_FIRS1_HOD           :FIRS 1 Hearth Of Darkness
 STR_ECONOMY_OTIS                :OTIS
 STR_ECONOMY_IOTC                :Industries of the Caribbean
 STR_ECONOMY_LUMBERJACK          :Lumberjack Industries
-STR_ECOMONY_WRBI                :Wannaroo Basic Industries
-STR_ECONOMY_ITI2                :Improved Town Industries
+STR_ECONOMY_WRBI                :Wannaroo Basic Industries
+STR_ECONOMY_ITI                 :Improved Town Industries
+STR_ECONOMY_ITI2                :Improved Town Industries 2
 STR_ECONOMY_REAL                :Real Industries
 STR_ECONOMY_MINIMALIST          :Minimalist Industries
-STR_ECONOMY_PIRS                :Pikka's Industries Redux Set (PIRS 2022)
 
 ##### ETERNAL LOVE #####
 STR_ETERNAL_LOVE_OUTSTANDING    :outstanding
