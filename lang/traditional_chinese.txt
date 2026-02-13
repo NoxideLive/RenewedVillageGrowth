@@ -36,7 +36,8 @@ STR_SB_WARNING_1         :地圖上的城鎮數量超出了遊戲腳本可以保
 STR_SB_WARNING_2         :貨物列表初始化失敗.存在未知的工業NewGRF導致無法進行程序性的貨物列表創建.{RED}已禁用遊戲腳本.{BLACK}
 STR_SB_WARNING_3         :貨物列表初始化失敗.存在工業隨機化選項導致無法創建程序性工業類別.{RED}已禁用遊戲腳本.{BLACK}
 STR_SB_WARNING_4         :必須將參數{ORANGE}環境->城鎮->城鎮增長速度 (Environment->Towns->Town groth speed){BLACK}設為其他選項.{RED}已禁用遊戲腳本.{BLACK}
-STR_SB_WARNING_5         :經濟檢測失敗。強制經濟與遊戲的貨物列表不匹配。請確保已載入正確的產業集。{RED}遊戲腳本已禁用。{BLACK}
+STR_SB_WARNING_5         :經濟檢測失敗。所選經濟與遊戲的貨物列表不匹配。請確保已載入正確的產業集。{RED}遊戲腳本已禁用。{BLACK}
+STR_SB_WARNING_6         :設定要求提供客運/郵件，但遊戲中不存在。請加載提供這些貨物的 NewGRF 或禁用該設定。{RED}遊戲腳本已禁用。{BLACK}
 STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}生成的經濟{BLACK}：預定義的經濟（FIRS、ECS、原版等）均不匹配您的貨物列表。貨物品類是程序生成的，可能不是最優的。為了獲得更好的效果，請載入受支持的產業 NewGRF（例如 FIRS 5、ECS）或在遊戲腳本設置中設置{ORANGE}經濟{BLACK}以要求特定經濟。
 STR_SB_WELCOME_ECONOMY_FORCED_GENERATED :{ORANGE}經濟：已生成{BLACK}。貨物品類是程序生成的，可能不是最優的。
 STR_SB_WELCOME_TITLE     :新發展 (Renewed Village Growth) {NUM}.{NUM}

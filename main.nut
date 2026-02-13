@@ -34,7 +34,6 @@ enum Randomization {
     ASCENDING = 15,
 };
 
-
 class MainClass extends GSController
 {
     companies = null;
@@ -159,6 +158,8 @@ function MainClass::Init()
                                              GSController.GetSetting("category_5_min_pop"),
                                              GSController.GetSetting("category_6_min_pop")];
         ::SettingsTable.force_economy <- GSController.GetSetting("force_economy");
+        ::SettingsTable.always_cat1 <- GSController.GetSetting("always_cat1");
+        ::SettingsTable.always_limiter <- GSController.GetSetting("always_limiter");
     }
 
     // Set current date

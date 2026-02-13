@@ -227,6 +227,11 @@ function StoryEditor::CreateStoryBook(companies, num_towns, init_error)
             GSStoryPage.NewElement(this.sp_warning, GSStoryPage.SPET_TEXT, 0, GSText(GSText.STR_SB_WARNING_5));
             GSStoryPage.Show(this.sp_warning);
             break;
+        case InitError.PAX_MAIL_REQUIRED:
+            this.sp_warning = this.NewStoryPage(GSCompany.COMPANY_INVALID, GSText(GSText.STR_SB_WARNING_TITLE));
+            GSStoryPage.NewElement(this.sp_warning, GSStoryPage.SPET_TEXT, 0, GSText(GSText.STR_SB_WARNING_6));
+            GSStoryPage.Show(this.sp_warning);
+            break;
     }
 }
 

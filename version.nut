@@ -5,6 +5,7 @@ enum InitError {
     TOWN_NUMBER,
     TOWN_GROWTH_RATE,
     ECONOMY_MISMATCH,
+    PAX_MAIL_REQUIRED,
 }
 
 SELF_VERSION <- 121             // integer version of the GS, needs to be increased with each release
