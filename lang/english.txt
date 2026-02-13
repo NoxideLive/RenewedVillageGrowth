@@ -46,10 +46,11 @@ STR_SB_WARNING_1         :There are more towns on the map than the game script c
 STR_SB_WARNING_2         :The cargo list initialization has failed. It was caused by an unknown industry newGRF for which a procedural cargo list creation was not possible. {RED}The game script is turned off.{BLACK}
 STR_SB_WARNING_3         :The cargo list initialization has failed. It was caused by the industry randomization option for which the procedural industry categories could not be created. {RED}The game script is turned off.{BLACK}
 STR_SB_WARNING_4         :You must set parameter {ORANGE}Environment->Towns->Town growth speed{BLACK} to something other than None. {RED}The game script is turned off.{BLACK}
-STR_SB_WARNING_5         :Economy detection failed. The forced economy does not match the game's cargo list. Ensure the correct industry set is loaded. {RED}The game script is disabled.{BLACK}
+STR_SB_WARNING_5         :Economy detection failed. The selected economy does not match the game's cargo list. Ensure the correct industry set is loaded. {RED}The game script is disabled.{BLACK}
 STR_SB_WELCOME_TITLE     :Renewed Village Growth {NUM}.{NUM}
 STR_SB_WELCOME_DESC      :{SILVER}Renewed Village Growth (RVG){BLACK} is a game script which {ORANGE}changes the way towns grow{BLACK} in OpenTTD. Various cargo requirements are defined for each town that need to be - partially or completely - monthly satisfied to make the towns grow faster. More information can be found in the {ORANGE}Readme file{BLACK}.
-STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Generated economy{BLACK}: No predefined economy (FIRS, ECS, Base Set, etc.) matched your cargo list. Cargo categories were created procedurally and may be suboptimal. For better results, load a supported industry NewGRF (e.g. FIRS 5, ECS) or set {ORANGE}Force economy{BLACK} in Game Script settings to require a specific economy.
+STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Generated economy{BLACK}: No predefined economy (FIRS, ECS, Base Set, etc.) matched your cargo list. Cargo categories were created procedurally and may be suboptimal. For better results, load a supported industry NewGRF (e.g. FIRS 5, ECS) or set {ORANGE}Economy{BLACK} in Game Script settings to require a specific economy.
+STR_SB_WELCOME_ECONOMY_FORCED_GENERATED :{ORANGE}Economy: Generated{BLACK}. Cargo categories were created procedurally and may be suboptimal.
 STR_SB_WELCOME_CARGO     :Economy {SILVER}{STRING}{BLACK} consists of {SILVER}{NUM} categories{BLACK}. To fulfill a category, deliver one or more of the category specific cargos to a {ORANGE}station near the town which accepts that cargo type{BLACK}. Fulfill the requirements above {SILVER}{NUM}%{BLACK} to {ORANGE}make the towns grow faster{BLACK}. More information about cargo categories are shown in the {ORANGE}Cargo categories story book page{BLACK}.
 STR_SB_WELCOME_LIMIT_GROWTH         :{SILVER}{CARGO_LIST}{BLACK} from that town can {ORANGE}stop the town growth{BLACK}. Transport at least {SILVER}{NUM}%{BLACK} of those cargo types to {ORANGE}allow town growth{BLACK}. {STRING1}
 STR_SB_WELCOME_LIMIT_GROWTH_DELAY   :The growth stops after {SILVER}{NUM} months{BLACK} of not fulfilling this requirement.
@@ -112,7 +113,7 @@ STR_FORCE_ECONOMY_AUTO          :Auto detect
 STR_FORCE_ECONOMY_VERSION_NONE  :—
 
 ##### ECONOMIES #####
-STR_ECONOMY_NONE                :
+STR_ECONOMY_NONE                :Generated
 STR_ECONOMY_BASESET_TEMPERATE   :Base Temperate
 STR_ECONOMY_BASESET_ARCTIC      :Base Arctic
 STR_ECONOMY_BASESET_TROPICAL    :Base Tropical

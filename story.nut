@@ -56,7 +56,8 @@ function StoryEditor::WelcomePage(sp_welcome)
     }
     
     if (::Economy == Economies.NONE) {
-        GSStoryPage.NewElement(sp_welcome, GSStoryPage.SPET_TEXT, 0, GSText(GSText.STR_SB_WELCOME_ECONOMY_GENERATED));
+        local str = ::ForceGeneratedEconomy ? GSText.STR_SB_WELCOME_ECONOMY_FORCED_GENERATED : GSText.STR_SB_WELCOME_ECONOMY_GENERATED;
+        GSStoryPage.NewElement(sp_welcome, GSStoryPage.SPET_TEXT, 0, GSText(str));
     }
     
     GSStoryPage.NewElement(sp_welcome, GSStoryPage.SPET_TEXT, 0, GSText(GSText.STR_SB_WELCOME_CARGO, GSText(GSText.STR_ECONOMY_NONE + ::Economy), ::CargoCatNum, this.supply_impacting_part));

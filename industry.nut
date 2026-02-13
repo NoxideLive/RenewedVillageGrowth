@@ -6,14 +6,15 @@ function InitIndustryLists()
     // Get current cargo list and init economy var
 	InitCurrentCargoList();
     local forced = GetForcedEconomyEnum();
-    local economy = (forced != null) ? DiscoverEconomyType(forced) : DiscoverEconomyType();
-    if (forced != null && economy == Economies.NONE) {
-        GSLog.Error("Economy mismatch: Forced economy does not match cargo list. See story book. Ensure the correct industry NewGRF is loaded.");
-        Log.Warning("Forced economy " + forced + " does not match. Expected vs actual cargo lists differ.");
+    ::ForceGeneratedEconomy <- (forced == FORCE_GENERATED);
+    local economy = (forced == FORCE_GENERATED) ? Economies.NONE : ((forced != null) ? DiscoverEconomyType(forced) : DiscoverEconomyType());
+    if (forced != null && forced != FORCE_GENERATED && economy == Economies.NONE) {
+        GSLog.Error("Economy mismatch: Selected economy does not match cargo list. See story book. Ensure the correct industry NewGRF is loaded.");
+        Log.Warning("Selected economy " + forced + " does not match. Expected vs actual cargo lists differ.");
         return InitError.ECONOMY_MISMATCH;
     }
     ::Economy <- economy;
-    ::CargoLimiter <- ::CargoSettings[::Economy].limiter;
+    ::CargoLimiter <- (economy == Economies.NONE) ? [0, 2] : ::CargoSettings[::Economy].limiter;
 
     local industry_type_list = GSIndustryTypeList();
 

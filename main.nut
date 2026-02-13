@@ -159,7 +159,6 @@ function MainClass::Init()
                                              GSController.GetSetting("category_5_min_pop"),
                                              GSController.GetSetting("category_6_min_pop")];
         ::SettingsTable.force_economy <- GSController.GetSetting("force_economy");
-        ::SettingsTable.force_economy_version <- GSController.GetSetting("force_economy_version");
     }
 
     // Set current date

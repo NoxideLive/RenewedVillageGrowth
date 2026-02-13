@@ -39,7 +39,8 @@ STR_SB_WARNING_4         :Der Parameter {ORANGE}Environment->Towns->Town growth 
 STR_SB_WARNING_5         :Die Wirtschaftserkennung ist fehlgeschlagen. Die erzwungene Wirtschaft stimmt nicht mit der Frachtliste des Spiels überein. Stellen Sie sicher, dass das richtige Industrie-Set geladen ist. {RED}Das Spielskript wurde deaktiviert.{BLACK}
 STR_SB_WELCOME_TITLE     :Renewed Village Growth {NUM}.{NUM}
 STR_SB_WELCOME_DESC      :{SILVER}Renewed Village Growth (RVG){BLACK} ist ein Spielskript, welches in OpenTTD {ORANGE}die Art des Städtewachstums ändert{BLACK}. Für jede Stadt existieren verschiedene Güterbedürfnisse, welche - teilweise oder komplett - monatlich gestillt werden müssen, um die Städte schneller wachsen zu lassen. Mehr Informationen lassen sich in der {ORANGE}Readme-Datei{BLACK} finden.
-STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Generierte Wirtschaft{BLACK}: Keine vordefinierte Wirtschaft (FIRS, ECS, Basisset usw.) entsprach Ihrer Frachtliste. Frachtkategorien wurden prozedural erstellt und können suboptimal sein. Für bessere Ergebnisse laden Sie ein unterstütztes Industrie-NewGRF (z.B. FIRS 5, ECS) oder setzen Sie {ORANGE}Force economy{BLACK} in den Spielskript-Einstellungen.
+STR_SB_WELCOME_ECONOMY_GENERATED :{ORANGE}Generierte Wirtschaft{BLACK}: Keine vordefinierte Wirtschaft (FIRS, ECS, Basisset usw.) entsprach Ihrer Frachtliste. Frachtkategorien wurden prozedural erstellt und können suboptimal sein. Für bessere Ergebnisse laden Sie ein unterstütztes Industrie-NewGRF (z.B. FIRS 5, ECS) oder setzen Sie {ORANGE}Wirtschaft{BLACK} in den Spielskript-Einstellungen.
+STR_SB_WELCOME_ECONOMY_FORCED_GENERATED :{ORANGE}Wirtschaft: Generiert{BLACK}. Frachtkategorien wurden prozedural erstellt und können suboptimal sein.
 STR_SB_WELCOME_CARGO     :Die Wirtschaft von {SILVER}{STRING}{BLACK} besteht aus {SILVER}{NUM} Kategorien{BLACK}. Um einer Kategorie zu genügen, liefern sie eine oder mehr der kategoriespezifischen Frachtarten zu einem {ORANGE}Bahnhof in der Nähe der Stadt, welcher die jeweilige Frachtart akzeptiert{BLACK}. Übererfüllen sie die angeführten Bedürfnisse um {SILVER}{NUM}%{BLACK}, um {ORANGE}die Stadt schneller wachsen zu lassen{BLACK}. Mehr Informationen über die Frachtkategorien befinden sich auf der {ORANGE}Chronikseite der Frachtkategorien{BLACK}.
 STR_SB_WELCOME_LIMIT_GROWTH         :{SILVER}{CARGO_LIST}{BLACK} einer Stadt kann deren {ORANGE}Wachstum stoppen{BLACK}. Transportieren sie mindestens {SILVER}{NUM}%{BLACK} dieser Frachtart um {ORANGE}Städtewachstum zu erlauben{BLACK}. {STRING}
 STR_SB_WELCOME_LIMIT_GROWTH_DELAY   :Das Wachstum stoppt, wennn diese Bedingung {SILVER}{NUM} Monate{BLACK} lang nicht erfüllt wurde.
@@ -81,7 +82,7 @@ STR_FORCE_ECONOMY_AUTO          :Automatisch erkennen
 STR_FORCE_ECONOMY_VERSION_NONE  :—
 
 ##### ECONOMIES #####
-STR_ECONOMY_NONE                :
+STR_ECONOMY_NONE                :Generiert
 STR_ECONOMY_BASESET_TEMPERATE   :gemäßigtes Klima
 STR_ECONOMY_BASESET_ARCTIC      :arktisches Klima
 STR_ECONOMY_BASESET_TROPICAL    :tropisches Klima
