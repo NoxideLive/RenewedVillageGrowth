@@ -1081,7 +1081,7 @@ function DefineCargosBySettings(economy)
     // Lookup settings
     if (!(economy in ::CargoSettings)) {
         if (!CreateDefaultCargoCat())
-            return false;
+            return InitError.CARGO_LIST;
     } else {
         local s = ::CargoSettings[economy];
         ::CargoLimiter <- s.limiter;
@@ -1127,7 +1127,80 @@ function DefineCargosBySettings(economy)
         }
     }
 
-    return true;
+    // Apply always_cat1 and always_limiter overrides
+    local always_cat1 = GSController.GetSetting("always_cat1");
+    local always_limiter = GSController.GetSetting("always_limiter");
+
+    local function FindCargoByLabel(label) {
+        if (!::CargoIDList) return null;
+        foreach (idx, l in ::CargoIDList) {
+            if (l == label) return idx;
+        }
+        return null;
+    }
+
+    local function GetCargoIdsForMode(mode) {
+        if (mode == 0) return [];
+        local pax = FindCargoByLabel("PASS");
+        local mail = FindCargoByLabel("MAIL");
+        if (mode == 1 || mode == 4) {
+            if (pax == null) return null;
+            return [pax];
+        }
+        if (mode == 2 || mode == 5) {
+            if (mail == null) return null;
+            return [mail];
+        }
+        if (mode == 3 || mode == 6) {
+            if (pax == null || mail == null) return null;
+            return [pax, mail];
+        }
+        return [];
+    }
+
+    // Validate: if setting enabled but required cargos missing, fail
+    local cat1_ids = GetCargoIdsForMode(always_cat1);
+    if (cat1_ids == null)
+        return InitError.PAX_MAIL_REQUIRED;
+    local limiter_ids = GetCargoIdsForMode(always_limiter);
+    if (limiter_ids == null)
+        return InitError.PAX_MAIL_REQUIRED;
+
+    // Apply to Cat 1
+    if (always_cat1 >= 1) {
+        if (always_cat1 <= 3) {
+            foreach (cargo_id in cat1_ids) {
+                for (local c = 1; c < ::CargoCat.len(); c++) {
+                    local idx = ::CargoCat[c].find(cargo_id);
+                    if (idx != null) ::CargoCat[c].remove(idx);
+                }
+                if (::CargoCat[0].find(cargo_id) == null)
+                    ::CargoCat[0].append(cargo_id);
+            }
+        } else {
+            foreach (cargo_id in cat1_ids) {
+                for (local c = 1; c < ::CargoCat.len(); c++) {
+                    local idx = ::CargoCat[c].find(cargo_id);
+                    if (idx != null) ::CargoCat[c].remove(idx);
+                }
+            }
+            ::CargoCat[0] = clone cat1_ids;
+        }
+    }
+
+    // Apply to Limiter
+    if (always_limiter >= 1) {
+        if (always_limiter <= 3) {
+            foreach (cargo_id in limiter_ids) {
+                if (::CargoLimiter.find(cargo_id) == null)
+                    ::CargoLimiter.append(cargo_id);
+            }
+        } else {
+            ::CargoLimiter = clone limiter_ids;
+        }
+    }
+
+    return InitError.NONE;
 }
 
 /* This function compares the ingame initial cargo list to the
@@ -1221,8 +1294,9 @@ function InitCargoLists()
     // Get economy type based on cargo list
     // Define cargo data accordingly to industry set
     local economy = DiscoverEconomyType();
-    if (!DefineCargosBySettings(economy))
-        return false;
+    local define_result = DefineCargosBySettings(economy);
+    if (define_result != InitError.NONE)
+        return define_result;
     Log.Info("Economy: " + (economy == Economies.NONE ? "generated" : ("predefined " + economy)), Log.LVL_INFO);
 
     // Initializing some useful and often used variables
@@ -1241,7 +1315,7 @@ function InitCargoLists()
     if (changed_min_pop_demand)
         SortCategoriesMinPopDemand();
 
-    return true;
+    return InitError.NONE;
 }
 
 /* Randomize fixed number of cargos per category and return cargo table. */
