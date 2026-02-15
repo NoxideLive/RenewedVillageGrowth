@@ -15,6 +15,9 @@ function InitIndustryLists()
     }
     ::Economy <- economy;
     ::CargoLimiter <- (economy == Economies.NONE) ? [0, 2] : ::CargoSettings[::Economy].limiter;
+    if (!::SettingsTable.use_limiter) {
+        ::CargoLimiter <- [];
+    }
 
     local industry_type_list = GSIndustryTypeList();
 

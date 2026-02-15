@@ -160,6 +160,7 @@ function MainClass::Init()
         ::SettingsTable.force_economy <- GSController.GetSetting("force_economy");
         ::SettingsTable.always_cat1 <- GSController.GetSetting("always_cat1");
         ::SettingsTable.always_limiter <- GSController.GetSetting("always_limiter");
+        ::SettingsTable.use_limiter <- GSController.GetSetting("use_limiter");
     }
 
     // Set current date
@@ -253,6 +254,7 @@ function MainClass::Save()
         save_table.randomization <- ::SettingsTable.randomization;
         save_table.display_cargo <- ::SettingsTable.display_cargo;
         save_table.cargo_6_category <- ::SettingsTable.cargo_6_category;
+        save_table.use_limiter <- ::SettingsTable.use_limiter;
         save_table.category_min_pop <- ::SettingsTable.category_min_pop;
 
         foreach (company in this.companies)
@@ -283,6 +285,7 @@ function MainClass::Load(version, saved_data)
         ::SettingsTable.randomization <- saved_data.randomization;
         ::SettingsTable.display_cargo <- saved_data.display_cargo;
         ::SettingsTable.cargo_6_category <- saved_data.cargo_6_category;
+        ::SettingsTable.use_limiter <- (saved_data.rawin("use_limiter")) ? saved_data.use_limiter : 1;
         ::SettingsTable.category_min_pop <- saved_data.category_min_pop;
 
         foreach (companyid, company_data in saved_data.company_data_table) {

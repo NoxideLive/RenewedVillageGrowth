@@ -8,7 +8,7 @@ enum InitError {
     PAX_MAIL_REQUIRED,
 }
 
-SELF_VERSION <- 121             // integer version of the GS, needs to be increased with each release
+SELF_VERSION <- 122             // integer version of the GS, needs to be increased with each release
 SELF_MINLOADVERSION <- 120      // minimum integer version of GS that can load this version, increased when major version is increased
 SELF_MAJORVERSION <- 12         // main version of the GS, releases with same major version should be saveload compatible
 SELF_MINORVERSION <- 1          // minor version of the GS, incremental subreleases of the major version, saveload compatible

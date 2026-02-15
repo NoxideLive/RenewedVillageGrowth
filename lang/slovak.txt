@@ -80,6 +80,7 @@ STR_TOWNBOX_CARGO_STOP          :Nefunkčný vývoz z mesta :{} * {RED}{CARGO_LI
 STR_TOWNBOX_CARGO_LOW           :Nedostatočná infraštruktúra dopravy :{} * {SILVER}{CARGO_LIST}{BLACK}{}Kategórie nákladu :
 STR_TOWNBOX_CARGO_DELAYED       :Nefunkčný vývoz z mesta :{} * {GOLD}{CARGO_LIST}{BLACK}{}Kategórie nákladu :
 STR_TOWNBOX_NOGROWTH            :Prevez {SILVER}{CARGO_LIST}{BLACK} z tohto mesta, aby mesto začalo rásť.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Dodajte tovar do tohto mesta, aby mesto začalo rásť.
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :Automatická detekcia

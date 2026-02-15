@@ -87,6 +87,7 @@ STR_TOWNBOX_CARGO_STOP          :Недостатньо вивезено з мі
 STR_TOWNBOX_CARGO_LOW           :Недостатня транспортна інфраструктура :{} * {SILVER}{CARGO_LIST}{BLACK}{}Категорії вантажів :
 STR_TOWNBOX_CARGO_DELAYED       :Недостатньо вивезено з міста :{} * {GOLD}{CARGO_LIST}{BLACK}{}Категорії вантажів :
 STR_TOWNBOX_NOGROWTH            :Транспортуйте {SILVER}{CARGO_LIST}{BLACK} з цього міста, щоб воно росло.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Доставляйте вантажі до цього міста, щоб воно росло.
 
 STR_TOWNBOX_CATEGORY_0          :{STRING}{}{STRING}{} * {LTBLUE}{STRING}{BLACK} : {SILVER}{RAW_STRING}{BLACK}
 STR_TOWNBOX_CATEGORY_1          :{STRING}{}{STRING}{} * {LTBLUE}{STRING}{BLACK} : {SILVER}{RAW_STRING}{BLACK}{} * {GREEN}{STRING}{BLACK} : {SILVER}{RAW_STRING}{BLACK}

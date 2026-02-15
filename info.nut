@@ -183,6 +183,15 @@ class MainClass extends GSInfo
                     _5 = "High" });
 
         AddSetting({
+            name = "use_limiter",
+            description = "Limit Growth: Require transport of specified cargos out of town for growth",
+            easy_value = 1,
+            medium_value = 1,
+            hard_value = 1,
+            custom_value = 1,
+            flags = CONFIG_BOOLEAN | CONFIG_INGAME});
+
+        AddSetting({
             name = "limit_min_transport",
             description = "Limit Growth: Minimum percentage of transported cargo from town",
             easy_value = 40,

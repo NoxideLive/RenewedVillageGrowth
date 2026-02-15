@@ -77,6 +77,7 @@ STR_TOWNBOX_CARGO_STOP          :Nicht ausreichend aus der Stadt abtransportiert
 STR_TOWNBOX_CARGO_LOW           :Unzureichende Versorgung mit Fracht :{} * {SILVER}{CARGO_LIST}{BLACK}{}Frachtkategorien :
 STR_TOWNBOX_CARGO_DELAYED       :Nicht ausreichend aus der Stadt abtransportiert :{} * {GOLD}{CARGO_LIST}{BLACK}{}Frachtkategorien :
 STR_TOWNBOX_NOGROWTH            :Transportiere {SILVER}{CARGO_LIST}{BLACK} von dieser Stadt ab, damit sie wächst.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Liefere Fracht in diese Stadt, damit sie wächst.
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :Automatisch erkennen

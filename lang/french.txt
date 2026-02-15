@@ -82,6 +82,7 @@ STR_TOWNBOX_CARGO_STOP          :Pas assez d’exportations :{} * {RED}{CARGO_LI
 STR_TOWNBOX_CARGO_LOW           :Infrastructures de transport insuffisantes :{} * {SILVER}{CARGO_LIST}{BLACK}{}Catégories de marchandise :
 STR_TOWNBOX_CARGO_DELAYED       :Pas assez d’exportations :{} * {GOLD}{CARGO_LIST}{BLACK}{}Catégories de marchandises:
 STR_TOWNBOX_NOGROWTH            :Transportez {SILVER}{CARGO_LIST}{BLACK} depuis cette ville pour la faire croître.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Livrez des marchandises à cette ville pour la faire croître.
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :Détection automatique

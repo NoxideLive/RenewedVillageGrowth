@@ -77,6 +77,7 @@ STR_TOWNBOX_CARGO_STOP          :Non se transporta o suficiente :{} * {RED}{CARG
 STR_TOWNBOX_CARGO_LOW           :Non hai suficiente infraestrutura de transporte :{} * {SILVER}{CARGO_LIST}{BLACK}{}Categorías de carga :
 STR_TOWNBOX_CARGO_DELAYED       :Non se transporta o suficiente :{} * {GOLD}{CARGO_LIST}{BLACK}{}Categorías de carga :
 STR_TOWNBOX_NOGROWTH            :Transporta {SILVER}{CARGO_LIST}{BLACK} nesta vila para facela medrar.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Entrega carga nesta vila para facela medrar.
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :Detección automática

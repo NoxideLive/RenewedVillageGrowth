@@ -73,6 +73,7 @@ STR_TOWNBOX_CARGO_STOP          :輸送不足:{} * {RED}{CARGO_LIST}{BLACK}{}貨
 STR_TOWNBOX_CARGO_LOW           :輸送不足:{} * {SILVER}{CARGO_LIST}{BLACK}{}貨物カテゴリー:
 STR_TOWNBOX_CARGO_DELAYED       :輸送不足:{} * {GOLD}{CARGO_LIST}{BLACK}{}貨物カテゴリー:
 STR_TOWNBOX_NOGROWTH            :街の成長に {SILVER}{CARGO_LIST}{BLACK} の輸送が必要です。
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :この街に貨物を届けて成長させてください。
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :自動検出

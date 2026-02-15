@@ -63,7 +63,7 @@ function StoryEditor::WelcomePage(sp_welcome)
     GSStoryPage.NewElement(sp_welcome, GSStoryPage.SPET_TEXT, 0, GSText(GSText.STR_SB_WELCOME_CARGO, GSText(GSText.STR_ECONOMY_NONE + ::Economy), ::CargoCatNum, this.supply_impacting_part));
     GSStoryPage.NewElement(sp_welcome, GSStoryPage.SPET_TEXT, 0, GSText(GSText.STR_SB_WELCOME_STATISTICS));
 
-    if (this.limit_min_transport > 0) {
+    if (this.limit_min_transport > 0 && ::CargoLimiter.len() > 0) {
         local limiter_cargos = 0;
         foreach (cargo in ::CargoLimiter) {
             limiter_cargos = limiter_cargos | 1 << cargo;

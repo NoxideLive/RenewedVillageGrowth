@@ -76,6 +76,7 @@ STR_TOWNBOX_CARGO_STOP          :Недостаточно вывезено из 
 STR_TOWNBOX_CARGO_LOW           :Недостаточная транспортная инфраструктура :{} * {SILVER}{CARGO_LIST}{BLACK}{}Категории груза :
 STR_TOWNBOX_CARGO_DELAYED       :Недостаточно вывезено из города :{} * {GOLD}{CARGO_LIST}{BLACK}{}Категории груза :
 STR_TOWNBOX_NOGROWTH            :Перевозите {SILVER}{CARGO_LIST}{BLACK} для роста города.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Доставляйте грузы в город для его роста.
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :Автоопределение

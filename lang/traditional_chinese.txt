@@ -76,6 +76,7 @@ STR_TOWNBOX_CARGO_STOP          :運出城鎮的貨物數量不足 :{} * {RED}{C
 STR_TOWNBOX_CARGO_LOW           :交通基礎設施不足 :{} * {SILVER}{CARGO_LIST}{BLACK}{}貨物類別 :
 STR_TOWNBOX_CARGO_DELAYED       :運出城鎮的貨物數量不足 :{} * {GOLD}{CARGO_LIST}{BLACK}{}貨物類別 :
 STR_TOWNBOX_NOGROWTH            :從該鎮運輸 {SILVER}{CARGO_LIST}{BLACK} 使其成長
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :向該鎮運送貨物使其成長
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :自動檢測

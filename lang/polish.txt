@@ -59,6 +59,7 @@ STR_TOWNBOX_CARGO_STOP          :Zbyt mało towaru wywiezionego z miasta:{} * {R
 STR_TOWNBOX_CARGO_LOW           :Zbyt mało towaru wywiezionego z miasta:{} * {SILVER}{CARGO_LIST}{BLACK}{}Kategorie towarów:
 STR_TOWNBOX_CARGO_DELAYED       :Zbyt mało towaru wywiezionego z miasta:{} * {GOLD}{CARGO_LIST}{BLACK}{}Kategorie towarów:
 STR_TOWNBOX_NOGROWTH            :Wywieź następujące towary z miasta, aby mogło rosnąć: {SILVER}{CARGO_LIST}{BLACK}.
+STR_TOWNBOX_NOGROWTH_NOLIMIT    :Dostarczaj towary do miasta, aby mogło rosnąć.
 
 ##### FORCE ECONOMY #####
 STR_FORCE_ECONOMY_AUTO          :Wykrywanie automatyczne

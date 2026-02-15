@@ -10,11 +10,15 @@ function GoalTown::TownBoxText(growth_enabled, text_mode, redraw=false)
             text_townbox = GSText(GSText["STR_TOWNBOX_CARGO_"+(::CargoCatNum-1)]);
             text_townbox = this.TownTextContributor(text_townbox);
 
-            local cargo_mask = 0;
-            foreach (cargo in ::CargoLimiter) {
-                cargo_mask = cargo_mask | 1 << cargo;
+            if (::CargoLimiter.len() > 0) {
+                local cargo_mask = 0;
+                foreach (cargo in ::CargoLimiter) {
+                    cargo_mask = cargo_mask | 1 << cargo;
+                }
+                text_townbox.AddParam(GSText(GSText.STR_TOWNBOX_NOGROWTH, cargo_mask));
+            } else {
+                text_townbox.AddParam(GSText(GSText.STR_TOWNBOX_NOGROWTH_NOLIMIT));
             }
-            text_townbox.AddParam(GSText(GSText.STR_TOWNBOX_NOGROWTH, cargo_mask));
 
             foreach (index, category in this.town_cargo_cat) {
                 cargo_mask = 0;
@@ -25,11 +29,15 @@ function GoalTown::TownBoxText(growth_enabled, text_mode, redraw=false)
                 text_townbox.AddParam(cargo_mask);
             }
         } else {
-            local cargo_mask = 0;
-            foreach (cargo in ::CargoLimiter) {
-                cargo_mask = cargo_mask | 1 << cargo;
+            if (::CargoLimiter.len() > 0) {
+                local cargo_mask = 0;
+                foreach (cargo in ::CargoLimiter) {
+                    cargo_mask = cargo_mask | 1 << cargo;
+                }
+                text_townbox = GSText(GSText.STR_TOWNBOX_NOGROWTH, cargo_mask);
+            } else {
+                text_townbox = GSText(GSText.STR_TOWNBOX_NOGROWTH_NOLIMIT);
             }
-            text_townbox = GSText(GSText.STR_TOWNBOX_NOGROWTH, cargo_mask);
         }
         return text_townbox;
     }
@@ -116,9 +124,11 @@ function GoalTown::TownTextCategories()
         max_cat++;
     }
 
-    local text_townbox = GSText(GSText["STR_TOWNBOX_CATEGORY_" + max_cat]);
+    local suffix = (::CargoLimiter.len() > 0) ? "" : "_NOLIMIT";
+    local text_townbox = GSText(GSText["STR_TOWNBOX_CATEGORY_" + max_cat + suffix]);
     text_townbox = this.TownTextContributor(text_townbox);
-    text_townbox = this.TownTextLimiter(text_townbox, true);
+    if (::CargoLimiter.len() > 0)
+        text_townbox = this.TownTextLimiter(text_townbox, true);
 
     for (local i = 0; i <= max_cat; i++) {
         text_townbox.AddParam(GSText(GSText["STR_CARGOCAT_LABEL_" + ::CargoCatList[i]]));
@@ -140,9 +150,11 @@ function GoalTown::TownTextCategoriesCombined(display_all)
         }
     }
 
-    local text_townbox = GSText(GSText["STR_TOWNBOX_COMBINED_" + max_cat]);
+    local suffix = (::CargoLimiter.len() > 0) ? "" : "_NOLIMIT";
+    local text_townbox = GSText(GSText["STR_TOWNBOX_COMBINED_" + max_cat + suffix]);
     text_townbox = this.TownTextContributor(text_townbox);
-    text_townbox = this.TownTextLimiter(text_townbox, true);
+    if (::CargoLimiter.len() > 0)
+        text_townbox = this.TownTextLimiter(text_townbox, true);
 
     for (local index = 0; index <= max_cat; ++index) {
         local cargo_mask = 0;
@@ -168,9 +180,11 @@ function GoalTown::TownTextCargos(display_all)
         }
     }
 
-    local text_townbox = GSText(GSText["STR_TOWNBOX_CARGO_" + max_cat]);
+    local suffix = (::CargoLimiter.len() > 0) ? "" : "_NOLIMIT";
+    local text_townbox = GSText(GSText["STR_TOWNBOX_CARGO_" + max_cat + suffix]);
     text_townbox = this.TownTextContributor(text_townbox);
-    text_townbox = this.TownTextLimiter(text_townbox, false);
+    if (::CargoLimiter.len() > 0)
+        text_townbox = this.TownTextLimiter(text_townbox, false);
 
     for (local index = 0; index <= max_cat; ++index) {
         local cargo_mask = 0;

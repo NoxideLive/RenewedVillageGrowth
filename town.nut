@@ -339,7 +339,7 @@ function GoalTown::ManageTownLimiting(threshold_setting, min_transported) {
     // if the town limiting is turned off or the size of the town is below the threshold, set requirements to zero
     local townPopulation = GSTown.GetPopulation(this.id);
 
-    if (townPopulation <= threshold_setting || min_transported == 0) {
+    if (townPopulation <= threshold_setting || min_transported == 0 || ::CargoLimiter.len() == 0) {
         this.limit_transported = 0;
         this.allowGrowth = true;
         this.limit_delay = 0;
@@ -373,6 +373,16 @@ function GoalTown::ManageTownLimiting(threshold_setting, min_transported) {
  */
 function GoalTown::CheckMonitoring(monitored)
 {
+    /* When limiter is disabled (CargoLimiter empty), all towns are monitored for cargo delivery. */
+    if (::CargoLimiter.len() == 0) {
+        if (!monitored) {
+            this.is_monitored = true;
+            this.last_delivery = GSDate.GetCurrentDate();
+            return true;
+        }
+        return true;
+    }
+
     /* To enable monitoring it is better to check the delivery
      * from the town and not to the town. This is necessary for
      * very little towns, which don't always receive passengers

@@ -1102,6 +1102,8 @@ function DefineCargosBySettings(economy)
     if (!(economy in ::CargoSettings)) {
         if (!CreateDefaultCargoCat())
             return InitError.CARGO_LIST;
+        if (!::SettingsTable.use_limiter)
+            ::CargoLimiter <- [];
     } else {
         local s = ::CargoSettings[economy];
         ::CargoLimiter <- s.limiter;
@@ -1188,9 +1190,12 @@ function DefineCargosBySettings(economy)
     local cat1_ids = GetCargoIdsForMode(always_cat1);
     if (cat1_ids == null)
         return InitError.PAX_MAIL_REQUIRED;
-    local limiter_ids = GetCargoIdsForMode(always_limiter);
-    if (limiter_ids == null)
-        return InitError.PAX_MAIL_REQUIRED;
+    local limiter_ids = [];
+    if (::SettingsTable.use_limiter && always_limiter >= 1) {
+        limiter_ids = GetCargoIdsForMode(always_limiter);
+        if (limiter_ids == null)
+            return InitError.PAX_MAIL_REQUIRED;
+    }
 
     // Apply to Cat 1
     if (always_cat1 >= 1) {
@@ -1214,8 +1219,8 @@ function DefineCargosBySettings(economy)
         }
     }
 
-    // Apply to Limiter
-    if (always_limiter >= 1) {
+    // Apply to Limiter (only when use_limiter is enabled)
+    if (always_limiter >= 1 && ::SettingsTable.use_limiter) {
         if (always_limiter <= 3) {
             foreach (cargo_id in limiter_ids) {
                 if (FindInArray(::CargoLimiter, cargo_id) == null)
@@ -1224,6 +1229,11 @@ function DefineCargosBySettings(economy)
         } else {
             ::CargoLimiter = clone limiter_ids;
         }
+    }
+
+    // Option B: When use_limiter is disabled, empty CargoLimiter for performance
+    if (!::SettingsTable.use_limiter) {
+        ::CargoLimiter <- [];
     }
 
     return InitError.NONE;
