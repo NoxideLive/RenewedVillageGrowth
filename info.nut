@@ -101,7 +101,7 @@ class MainClass extends GSInfo
 
         AddSetting({
                 name = "always_cat1",
-                description = "Cargo: Category 1 (deliver to town)",
+                description = "Cargo: Modify category 1 (deliver to town)",
                 easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0,
                 flags = CONFIG_INGAME, min_value = 0, max_value = 6 });
         AddLabels("always_cat1", {
