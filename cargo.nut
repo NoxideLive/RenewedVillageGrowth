@@ -71,7 +71,8 @@ enum Economies
     END,
 }
 
-const FORCE_GENERATED = Economies.END;  // Sentinel: use generated economy (setting 1)
+// Squirrel 2.2: const requires literal scalar; Economies.END is an expression
+::FORCE_GENERATED <- Economies.END;  // Sentinel: use generated economy (setting 1)
 
 function GetForcedEconomyEnum() {
     local setting = GSController.GetSetting("force_economy");
