@@ -115,7 +115,7 @@ class MainClass extends GSInfo
 
         AddSetting({
                 name = "always_limiter",
-                description = "Cargo: Limiter (transport out to unblock growth)",
+                description = "Limit Growth: Modify limiter cargos (transport out to unblock growth)",
                 easy_value = 0, medium_value = 0, hard_value = 0, custom_value = 0,
                 flags = CONFIG_INGAME, min_value = 0, max_value = 6 });
         AddLabels("always_limiter", {
